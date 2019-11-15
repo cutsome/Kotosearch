@@ -1,0 +1,19 @@
+<div class="header">
+  <div class="header-logo">
+    <%= link_to "Kotosearch", root_path, id: "header-logo-item" %>
+  </div>
+  <div class="keyword-search">
+    <%#= 検索フォーム %>
+  </div>
+  <ul class="global-menu">
+    <li><%= link_to "体験型事業者を探す", "#", class: "global-menu-item" %></li>
+    <li><%= link_to "エージェントを探す", "#", class: "global-menu-item" %></li>
+    <li><%= link_to "ご利用ガイド", help_path, class: "global-menu-item" %></li>
+  </ul>
+  <ul class="header-menu">
+    <li><%= link_to "事業者登録", "#", class: "header-menu-item" %></li>
+    <li><%= link_to "Agent登録", signup_agent_path, class: "header-menu-item" %></li>
+    <li><%= link_to "マイページ", "#", class: "header-menu-item" %></li>
+    <li><%= link_to "ログイン", "#", class: "header-menu-item login" %></li>
+  </ul>
+</div>

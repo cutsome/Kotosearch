@@ -1,0 +1,33 @@
+<%= provide(:title, "会員登録") %>
+
+<div class="signup">
+  <div class="register-headline">
+    <h1 class="title">Kotosearch 無料会員登録</h1>
+    <p class="description">以下の項目を入力して、Kotosearchに登録してください</p>
+  </div>
+  <div class="register">
+    <%= form_for(@agent, html: { class: "register-form" }) do |f| %>
+      <%= f.label "会社名", class: "register-label" %>
+      <%= f.text_field :name, class: "register-block" %>
+
+      <%= f.label "メールアドレス", class: "register-label" %>
+      <%= f.text_field :email, class: "register-block" %>
+
+      <%= f.label "パスワード", class: "register-label" %>
+      <%= f.password_field :password, class: "register-block" %>
+
+      <%= f.label "パスワード確認", class: "register-label" %>
+      <%= f.password_field :password_confirmation, class: "register-block" %>
+
+      <div class="btn-location">
+        <%= f.submit "新規登録", class: "button" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+<!-- Facebookで登録する -->
+<!-- Facebookに勝手に投稿されることは一切ありません -->
