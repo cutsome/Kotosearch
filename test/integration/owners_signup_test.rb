@@ -19,5 +19,8 @@ class OwnersSignupTest < ActionDispatch::IntegrationTest
                                password: "1234abcd",
                                password_confirmation: "1234abcd" } }
     end
+    follow_redirect!
+    assert_template 'owners/show'
+    assert_not flash.empty?
   end
 end
