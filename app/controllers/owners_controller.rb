@@ -7,8 +7,21 @@ class OwnersController < ApplicationController
   end
 
   def create
+    @owner = Owner.new(owner_params)
+    if @owner.save
+      flash[:success] = "ご登録ありがとうございます！"
+      redirect_to @owner
+    else
+      render "new"
+    end
   end
 
   def show
+    @owner = Owner.find(params[:id])
   end
+
+  private
+    def owner_params
+      params.require(:owner).permit(:name, :email, :password, :password_confirmation)
+    end
 end

@@ -7,7 +7,7 @@ class Owner < ApplicationRecord
   has_secure_password
   VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
   validates :password, presence: true, length: { minimum: 8, maximum: 32 },
-              format: { with: VALID_PASSWORD_REGEX }
+              format: { with: VALID_PASSWORD_REGEX }, allow_nil: true
 
   def Owner.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

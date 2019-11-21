@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    models:
+      agent: エージェント
+    attributes:
+      agent:
+        name: 会社名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+    models:
+      owner: 事業者
+    attributes:
+      owner:
+        name: 会社名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード

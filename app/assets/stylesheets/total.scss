@@ -106,6 +106,44 @@ li {
   margin-right: 30px;
 }
 
+/* container */
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@media(min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media(min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media(min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media(min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media(min-width: 1400px) {
+  .container {
+    max-width: 1340px;
+  }
+}
+
 /* register form */
 
 .signup {
@@ -138,7 +176,7 @@ li {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-.register-form {
+.register-layout {
   display: grid;
   grid-template-columns: 200px 1fr;
 }
@@ -161,10 +199,6 @@ li {
 }
 
 .btn-location {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 5;
-  grid-row-end: 6;
   text-align: center;
 }
 
@@ -187,4 +221,26 @@ li {
 .button:hover {
   -webkit-transform: rotate(10deg);
   transform: rotate(10deg);
+}
+
+.alert {
+  width: 100%;
+  margin: 0 auto 20px;
+  padding: 10px 0 10px 40px;
+  text-align: left;
+  font-size: 13px;
+  color: #000;
+  border-radius: 5px;
+}
+
+.alert-success {
+  background-color: rgb(233, 255, 245);
+  color: #008000;
+  border: 1px solid #008000;
+}
+
+.alert-danger {
+  background-color: rgb(255, 233, 233);
+  color: #ff0000;
+  border: 1px solid #ff0000;
 }
