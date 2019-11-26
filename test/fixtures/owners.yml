@@ -1,4 +1,4 @@
 owner1:
   name: masahiro
   email: a@yahoo.co.jp
-  password_digest: <%= Agent.digest('password') %>
+  password_digest: <%= Agent.digest('1234abcd') %>

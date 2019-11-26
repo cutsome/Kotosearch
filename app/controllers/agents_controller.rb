@@ -9,6 +9,7 @@ class AgentsController < ApplicationController
   def create
     @agent = Agent.new(agent_params)
     if @agent.save
+      agent_log_in @agent
       flash[:success] = "ご登録ありがとうございます！"
       redirect_to @agent
     else

@@ -1,4 +1,4 @@
 agent1:
   name: masahiro
   email: a@gmail.com
-  password_digest: <%= Agent.digest('password') %>
+  password_digest: <%= Agent.digest('1234abcd') %>

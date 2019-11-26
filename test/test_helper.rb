@@ -13,5 +13,11 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  def agent_is_logged_in?
+    !session[:agent_id].nil?
+  end
+
+  def owner_is_logged_in?
+    !session[:owner_id].nil?
+  end
 end

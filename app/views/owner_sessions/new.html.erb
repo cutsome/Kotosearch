@@ -1,0 +1,29 @@
+<%= provide(:title, "ログイン") %>
+
+<div class="form">
+  <div class="form-headline">
+    <h1 class="title">体験型事業者様  ログイン</h1>
+    <p class="description">メールアドレス及びパスワード(半角英数8文字以上)を入力してください</p>
+  </div>
+  <div class="form-container">
+    <%= form_for(:session, url: login_owner_path) do |f| %>
+      <div class="form-layout">
+        <%= f.label "メールアドレス", class: "form-label" %>
+        <%= f.text_field :email, class: "form-block" %>
+
+        <%= f.label "パスワード", class: "form-label" %>
+        <%= f.password_field :password, class: "form-block" %>
+      </div>
+      <div class="btn-location">
+        <%= f.submit "ログイン", class: "button" %>
+      </div>
+    <% end %>
+    <p><%= link_to "新規登録こちら", signup_owner_path %></p>
+  </div>
+</div>
+
+
+
+
+<!-- Facebookで登録する -->
+<!-- Facebookに勝手に投稿されることは一切ありません -->
