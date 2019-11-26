@@ -13,12 +13,20 @@
 
         <%= f.label "パスワード", class: "form-label" %>
         <%= f.password_field :password, class: "form-block" %>
+
+        <%= f.label :remember_me, class: "form-block checkbox" do %>
+          <%= f.check_box :remember_me %>
+          <span>ログイン状態を保持する</span>
+        <% end %>
       </div>
       <div class="btn-location">
         <%= f.submit "ログイン", class: "button" %>
       </div>
     <% end %>
-    <p><%= link_to "新規登録こちら", signup_agent_path %></p>
+  </div>
+  <div class="switch-panel">
+    <div class="text">Kotosearch のアカウントはお持ちではないですか？</div>
+    <%= link_to "新規登録こちら", signup_agent_path, class: "to-signup" %>
   </div>
 </div>
 

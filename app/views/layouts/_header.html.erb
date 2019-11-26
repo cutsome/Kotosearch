@@ -15,10 +15,10 @@
     <li><%= link_to "エージェント登録", signup_agent_path, class: "header-menu-item" %></li>
     <% if agent_logged_in? %>
       <li><%= link_to "マイページ", current_agent, class: "header-menu-item" %></li>
-      <li><%= link_to "ログアウト", logout_agent_path, class: "header-menu-item login" %></li>
+      <li><%= link_to "ログアウト", logout_agent_path, method: :delete, class: "header-menu-item login" %></li>
     <% elsif owner_logged_in? %>
       <li><%= link_to "マイページ", current_owner, class: "header-menu-item" %></li>
-      <li><%= link_to "ログアウト", logout_owner_path, class: "header-menu-item login" %></li>
+      <li><%= link_to "ログアウト", logout_owner_path, method: :delete, class: "header-menu-item login" %></li>
     <% else %>
       <li>
         <label class="header-menu-item login" for="my_modal1">ログイン</label>

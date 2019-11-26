@@ -75,4 +75,8 @@ class AgentTest < ActiveSupport::TestCase
                                                      abcdefgh ABCD1234 ABCDefgh あい123456]
     assert_not @agent.valid?
   end
+
+  test "authenticated? 記憶ダイジェストがない時、falseを返すか" do
+    assert_not @agent.authenticated?('')
+  end
 end

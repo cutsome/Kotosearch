@@ -17,7 +17,28 @@ class ActiveSupport::TestCase
     !session[:agent_id].nil?
   end
 
+  def agent_login(agent)
+    session[:agent_id] = agent.id
+  end
+
   def owner_is_logged_in?
     !session[:owner_id].nil?
+  end
+
+  def owner_login(owner)
+    session[:owner_id] = owner.id
+  end
+
+  class ActionDispatch::IntegrationTest
+
+    def agent_login(agent, password:'1234abcd', remember_me: '1')
+      post login_agent_path, params: { session: { email: agent.email,
+                         password: password, remember_me: remember_me } }
+    end
+
+    def owner_login(owner, password:'1234abcd', remember_me: '1')
+      post login_owner_path, params: { session: { email: owner.email,
+                         password: password, remember_me: remember_me } }
+    end
   end
 end
