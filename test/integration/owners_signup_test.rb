@@ -3,7 +3,7 @@ require 'test_helper'
 class OwnersSignupTest < ActionDispatch::IntegrationTest
 
   test "誤った登録情報でのサインアップ" do
-    get signup_owner_path
+    get owner_signup_path
     assert_no_difference 'Owner.count' do
       post owners_path, params: { owner: { name: "",
            email: "aa", password: "aa", password_confirmation: "aa" } }
@@ -12,7 +12,7 @@ class OwnersSignupTest < ActionDispatch::IntegrationTest
   end
 
   test "正しい登録情報でのサインアップ" do
-    get signup_owner_path
+    get owner_signup_path
     assert_difference 'Owner.count', 1 do
       post owners_path, params: { owner: { name: "masahiro",
                      email: "abc@gmail.com", password: "1234abcd",

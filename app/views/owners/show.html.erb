@@ -1,2 +1,4 @@
-<h1>Owners#show</h1>
-<p>Find me in app/views/owners/show.html.erb</p>
+<% provide(:title, "マイページ") %>
+
+<%= @owner.name %>,<%= @owner.email %>
+<%= link_to "編集", edit_owner_path(@owner) %>

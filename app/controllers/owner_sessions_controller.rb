@@ -7,7 +7,7 @@ class OwnerSessionsController < ApplicationController
     if owner && owner.authenticate(params[:session][:password])
       owner_log_in owner
       params[:session][:remember_me] == '1' ? owner_remember(owner) : forget(owner)
-      redirect_to owner
+      redirect_back_or owner
     else
       flash.now[:danger] = "メールアドレスまたはパスワードが間違っています"
       render 'owner_sessions/new'

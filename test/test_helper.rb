@@ -32,12 +32,12 @@ class ActiveSupport::TestCase
   class ActionDispatch::IntegrationTest
 
     def agent_login(agent, password:'1234abcd', remember_me: '1')
-      post login_agent_path, params: { session: { email: agent.email,
+      post agent_login_path, params: { session: { email: agent.email,
                          password: password, remember_me: remember_me } }
     end
 
     def owner_login(owner, password:'1234abcd', remember_me: '1')
-      post login_owner_path, params: { session: { email: owner.email,
+      post owner_login_path, params: { session: { email: owner.email,
                          password: password, remember_me: remember_me } }
     end
   end

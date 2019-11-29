@@ -15,7 +15,7 @@
       <%= f.password_field :password_confirmation, class: "form-block" %>
     </div>
     <div class="btn-location">
-      <%= f.submit "新規登録", class: "button" %>
+      <%= f.submit yield(:button_text), class: "button" %>
     </div>
   <% end %>
 </div>

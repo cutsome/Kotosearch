@@ -1,4 +1,4 @@
-<%= provide(:title, "ログイン") %>
+<% provide(:title, "ログイン") %>
 
 <div class="form">
   <div class="form-headline">
@@ -6,7 +6,7 @@
     <p class="description">メールアドレス及びパスワード(半角英数8文字以上)を入力してください</p>
   </div>
   <div class="form-container">
-    <%= form_for(:session, url: login_agent_path) do |f| %>
+    <%= form_for(:session, url: agent_login_path) do |f| %>
       <div class="form-layout">
         <%= f.label "メールアドレス", class: "form-label" %>
         <%= f.text_field :email, class: "form-block" %>
@@ -26,7 +26,7 @@
   </div>
   <div class="switch-panel">
     <div class="text">Kotosearch のアカウントはお持ちではないですか？</div>
-    <%= link_to "新規登録こちら", signup_agent_path, class: "to-signup" %>
+    <%= link_to "新規登録こちら", agent_signup_path, class: "to-signup" %>
   </div>
 </div>
 

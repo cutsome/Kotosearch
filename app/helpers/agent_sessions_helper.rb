@@ -22,6 +22,10 @@ module AgentSessionsHelper
     end
   end
 
+  def current_agent?(agent)
+    agent == current_agent
+  end
+
   def agent_logged_in?
     !current_agent.nil?
   end
@@ -36,5 +40,14 @@ module AgentSessionsHelper
     forget(current_agent)
     session.delete(:agent_id)
     @current_agent = nil
+  end
+
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
+  end
+
+  def redirect_back_or(default)
+    redirect_to session[:forwarding_url] || default
+    session.delete(:forwarding_url)
   end
 end

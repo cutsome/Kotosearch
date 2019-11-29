@@ -1,5 +1,10 @@
 class AgentsController < ApplicationController
+  before_action :logged_in_agent, only: [:edit, :update, :destroy]
+  before_action :correct_agent, only: [:edit, :update]
+  before_action :admin_agent, only: :destroy
+
   def index
+    @agents = Agent.all.page(params[:page]).per(20)
   end
 
   def new
@@ -13,7 +18,7 @@ class AgentsController < ApplicationController
       flash[:success] = "ご登録ありがとうございます！"
       redirect_to @agent
     else
-      render "new"
+      render 'new'
     end
   end
 
@@ -21,8 +26,43 @@ class AgentsController < ApplicationController
     @agent = Agent.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+    if @agent.update(agent_params)
+      flash[:success] = "編集が完了しました"
+      redirect_to @agent
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    Agent.find(params[:id]).destroy
+    flash[:success] = "ユーザーは削除されました"
+    redirect_to agents_url
+  end
+
   private
     def agent_params
       params.require(:agent).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def logged_in_agent
+      unless agent_logged_in?
+        store_location
+        flash[:danger] = "ログインしてください"
+        redirect_to agent_login_url
+      end
+    end
+
+    def correct_agent
+      @agent = Agent.find(params[:id])
+      redirect_to root_url unless current_agent?(@agent)
+    end
+
+    def admin_agent
+      redirect_to root_url unless current_agent.admin?
     end
 end

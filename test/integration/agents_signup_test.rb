@@ -3,7 +3,7 @@ require 'test_helper'
 class AgentsSignupTest < ActionDispatch::IntegrationTest
 
   test "誤った登録情報でのサインアップ" do
-    get signup_agent_path
+    get agent_signup_path
     assert_no_difference 'Agent.count' do
       post agents_path, params: { agent: { name: "",
            email: "aa", password: "aa", password_confirmation: "aa" } }
@@ -12,7 +12,7 @@ class AgentsSignupTest < ActionDispatch::IntegrationTest
   end
 
   test "正しい登録情報でのサインアップ" do
-    get signup_agent_path
+    get agent_signup_path
     assert_difference 'Agent.count', 1 do
       post agents_path, params: { agent: { name: "masahiro",
                        email: "abc@gmail.com", password: "1234abcd",

@@ -1,2 +1,19 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<% provide(:title, 'エージェントを探す') %>
+
+<div class="business-layout">
+  <div class="business-layout-main">
+    <% @agents.each do |agent| %>
+      <div class="business-item">
+        <div class="business-image">画像</div>
+        <div class="business-info">
+          <%= link_to agent.name, agent, class: "business-item-name" %>
+          <% if agent_logged_in? && current_agent.admin? && !current_agent?(agent) %>
+            <%= link_to "削除", agent, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+          <% end %>
+          <%= link_to agent.email, agent, class: "business-item-email" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= paginate @agents %>
+</div>

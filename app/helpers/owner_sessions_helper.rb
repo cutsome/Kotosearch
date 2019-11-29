@@ -22,6 +22,10 @@ module OwnerSessionsHelper
     end
   end
 
+  def current_owner?(owner)
+    owner == current_owner
+  end
+
   def owner_logged_in?
     !current_owner.nil?
   end
@@ -36,5 +40,14 @@ module OwnerSessionsHelper
     forget(current_owner)
     session.delete(:owner_id)
     @current_owner = nil
+  end
+
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
+  end
+
+  def redirect_back_or(default)
+    redirect_to session[:forwarding_url] || default
+    session.delete(:forwarding_url)
   end
 end

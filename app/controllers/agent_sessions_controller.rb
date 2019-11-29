@@ -7,7 +7,7 @@ class AgentSessionsController < ApplicationController
     if agent && agent.authenticate(params[:session][:password])
       agent_log_in agent
       params[:session][:remember_me] == '1' ? agent_remember(agent) : forget(agent)
-      redirect_to agent
+      redirect_back_or agent
     else
       flash.now[:danger] = "メールアドレスまたはパスワードが間違っています"
       render 'agent_sessions/new'

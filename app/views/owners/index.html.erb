@@ -1,2 +1,19 @@
-<h1>Owners#index</h1>
-<p>Find me in app/views/owners/index.html.erb</p>
+<% provide(:title, '体験型事業者を探す') %>
+
+<div class="business-layout">
+  <div class="business-layout-main">
+    <% @owners.each do |owner| %>
+      <div class="business-item">
+        <div class="business-image">画像</div>
+        <div class="business-info">
+          <%= link_to owner.name, owner, class: "business-item-name" %>
+          <% if owner_logged_in? && current_owner.admin? && !current_owner?(owner) %>
+            <%= link_to "削除", owner, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+          <% end %>
+          <%= link_to owner.email, owner, class: "business-item-email" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= paginate @owners %>
+</div>
