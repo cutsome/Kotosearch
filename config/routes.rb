@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   delete '/owner_logout', to: 'owner_sessions#destroy'
   resources :agents
   resources :owners
+  resources :account_activations, only: [:edit]
 end

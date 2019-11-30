@@ -3,25 +3,35 @@ owner1:
   email: ab@yahoo.co.jp
   password_digest: <%= Owner.digest('1234abcd') %>
   admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 owner2:
   name: nishikawa
   email: cd@yahoo.co.jp
   password_digest: <%= Owner.digest('1234abcd') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 owner3:
   name: owner3
   email: owner3@gmail.com
   password_digest: <%= Owner.digest('1234abcd') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 owner4:
   name: owner4
   email: owner4@gmail.com
   password_digest: <%= Owner.digest('1234abcd') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 <% 30.times do |n| %>
 owner<%= n+4 %>:
   name: <%= "owner#{n+4}" %>
   email: <%= "owner-#{n+4}@gmail.com" %>
   password_digest: <%= Owner.digest('1234abcd') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 <% end %>

@@ -5,9 +5,16 @@ class AgentSessionsController < ApplicationController
   def create #ログイン処理
     agent = Agent.find_by(email: params[:session][:email].downcase)
     if agent && agent.authenticate(params[:session][:password])
-      agent_log_in agent
-      params[:session][:remember_me] == '1' ? agent_remember(agent) : forget(agent)
-      redirect_back_or agent
+      if agent.activated?
+        agent_log_in agent
+        params[:session][:remember_me] == '1' ? agent_remember(agent) : forget(agent)
+        redirect_back_or agent
+      else
+        message = "アカウントが有効化されていません"
+        message += "メールのアカウント有効化リンクをお確かめください"
+        flash[:warning] = message
+        redirect_to root_url
+      end
     else
       flash.now[:danger] = "メールアドレスまたはパスワードが間違っています"
       render 'agent_sessions/new'

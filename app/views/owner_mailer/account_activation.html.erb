@@ -1,0 +1,7 @@
+<h1>Kotosearch</h1>
+
+<p>ようこそ、<%= @owner.name %> 様！</p>
+
+<p>以下のリンクをクリックして、アカウントを有効化してください。</p>
+
+<%= link_to "こちらよりアカウント有効化を行ってください", edit_account_activation_url(@owner.activation_token, email: @owner.email) %>

@@ -1,0 +1,6 @@
+ようこそ、<%= @agent.name %> 様！
+
+Kotosearchにご登録ありがとうございます。
+以下のリンクをクリックして、アカウントを有効化してください。
+
+<%= edit_account_activation_url(@agent.activation_token, email: @agent.email) %>

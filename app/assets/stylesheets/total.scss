@@ -379,7 +379,19 @@ li {
   border: 1px solid #ff0000;
 }
 
-/* contens page */
+.alert-info {
+  background-color: rgb(233, 247, 255);
+  color: #000aff;
+  border: 1px solid #000aff;
+}
+
+.alert-warning {
+  background-color: rgb(255, 255, 233);
+  color: #f2ff00;
+  border: 1px solid #f2ff00;
+}
+
+/* contents page */
 
 .business-layout {
   margin: 0 auto;

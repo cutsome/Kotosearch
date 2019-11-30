@@ -77,6 +77,6 @@ class AgentTest < ActiveSupport::TestCase
   end
 
   test "authenticated? 記憶ダイジェストがない時、falseを返すか" do
-    assert_not @agent.authenticated?('')
+    assert_not @agent.authenticated?(:remember, '')
   end
 end

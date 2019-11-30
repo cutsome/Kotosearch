@@ -26,6 +26,8 @@ gem 'rails-i18n'
 gem 'faker'
 
 gem 'kaminari'
+
+gem 'mail-iso-2022-jp'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

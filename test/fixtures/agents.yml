@@ -3,25 +3,35 @@ agent1:
   email: ab@gmail.com
   password_digest: <%= Agent.digest('1234abcd') %>
   admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 agent2:
   name: nishikawa
   email: cd@gmail.com
   password_digest: <%= Agent.digest('1234abcd') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 agent3:
   name: agent3
   email: agent3@gmail.com
   password_digest: <%= Agent.digest('1234abcd') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 agent4:
   name: agent4
   email: agent4@gmail.com
   password_digest: <%= Agent.digest('1234abcd') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 <% 30.times do |n| %>
 agent<%= n+4 %>:
   name: <%= "agent#{n+4}" %>
   email: <%= "agent-#{n+4}@gmail.com" %>
   password_digest: <%= Agent.digest('1234abcd') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 <% end %>
