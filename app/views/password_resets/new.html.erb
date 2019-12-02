@@ -1,0 +1,19 @@
+<% provide(:title, "パスワード再設定") %>
+
+<div class="form">
+  <div class="form-headline">
+    <h1 class="title">パスワード再設定</h1>
+    <p class="description">ご登録のメールアドレスを入力してください</p>
+  </div>
+  <div class="form-container">
+    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+      <div class="form-layout">
+        <%= f.label "メールアドレス", class: "form-label" %>
+        <%= f.text_field :email, class: "form-block" %>
+      </div>
+      <div class="btn-location">
+        <%= f.submit "送信", class: "button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

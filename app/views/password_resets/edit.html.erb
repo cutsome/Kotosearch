@@ -1,0 +1,26 @@
+<% provide(:title, "パスワード再設定") %>
+
+<div class="form">
+  <div class="form-headline">
+    <h1 class="title">パスワード再設定</h1>
+    <p class="description">パスワード(半角英数8文字以上)を入力してください</p>
+  </div>
+  <div class="form-container">
+    <%= form_for(@object, url: password_reset_path(params[:id])) do |f| %>
+      <%= render "shared/error_messages", model: f.object %>
+
+      <%= hidden_field_tag :email, @object.email %>
+
+      <div class="form-layout">
+        <%= f.label "パスワード", class: "form-label" %>
+        <%= f.password_field :password, class: "form-block" %>
+
+        <%= f.label "パスワード確認", class: "form-label" %>
+        <%= f.password_field :password_confirmation, class: "form-block" %>
+      </div>
+      <div class="btn-location">
+        <%= f.submit "アップデート", class: "button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

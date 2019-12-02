@@ -6,7 +6,7 @@ class AccountActivationsController < ApplicationController
     object = agent || owner
     if object && !object.activated? && object.authenticated?(:activation, params[:id])
       object.activate
-      object == agent ? agent_log_in(agent) : owner_log_in(owner)   #ログイン処理
+      agent_log_in(object) || owner_log_in(object)
       flash[:success] = "アカウントが有効化されました！"
       redirect_to object
     else

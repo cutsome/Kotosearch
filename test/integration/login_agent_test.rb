@@ -20,7 +20,7 @@ class LoginAgentTest < ActionDispatch::IntegrationTest
     get agent_login_path
     post agent_login_path, params: { session: { email: @agent.email,
                                           password: '1234abcd' } }
-    assert agent_is_logged_in?
+    assert is_logged_in?
     assert_redirected_to @agent
     follow_redirect!
     assert_template 'agents/show'
@@ -28,7 +28,7 @@ class LoginAgentTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", agent_logout_path
     assert_select "a[href=?]", agent_path(@agent)
     delete agent_logout_path
-    assert_not agent_is_logged_in?
+    assert_not is_logged_in?
     assert_redirected_to root_url
     delete agent_logout_path
     follow_redirect!

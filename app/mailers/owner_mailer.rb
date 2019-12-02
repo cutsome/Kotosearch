@@ -5,8 +5,8 @@ class OwnerMailer < ApplicationMailer
     mail to: owner.email, subject: "アカウント有効化"
   end
 
-  def password_reset
-    @greeting = "Hi"
-    mail to: "to@example.org"
+  def password_reset(owner)
+    @owner = owner
+    mail to: owner.email, subject: "パスワード再設定"
   end
 end

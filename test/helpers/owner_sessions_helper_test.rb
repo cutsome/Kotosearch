@@ -9,7 +9,7 @@ class OwnerSessionsHelperTest < ActionView::TestCase
 
   test "current_ownerは、sessionがnilでもrightを返す" do
     assert_equal @owner, current_owner
-    assert owner_is_logged_in?
+    assert is_logged_in?
   end
 
   test "current_ownerは、記憶ダイジェストが異なる値の時nilを返す" do

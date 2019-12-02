@@ -27,14 +27,14 @@ class AgentsSignupTest < ActionDispatch::IntegrationTest
     assert_not agent.activated?
     agent_login(agent)
     get edit_account_activation_path("invalid token", email: agent.email)
-    assert_not agent_is_logged_in?
+    assert_not is_logged_in?
     get edit_account_activation_path(agent.activation_token, email: 'wrong')
-    assert_not agent_is_logged_in?
+    assert_not is_logged_in?
     get edit_account_activation_path(agent.activation_token, email: agent.email)
     assert agent.reload.activated?
     follow_redirect!
     assert_template 'agents/show'
     assert_not flash.empty?
-    assert agent_is_logged_in?
+    assert is_logged_in?
   end
 end

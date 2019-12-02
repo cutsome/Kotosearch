@@ -9,7 +9,7 @@ class AgentSessionsHelperTest < ActionView::TestCase
 
   test "current_agentは、sessionがnilでもrightを返す" do
     assert_equal @agent, current_agent
-    assert agent_is_logged_in?
+    assert is_logged_in?
   end
 
   test "current_agentは、記憶ダイジェストが異なる値の時nilを返す" do

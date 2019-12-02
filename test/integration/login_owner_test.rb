@@ -20,7 +20,7 @@ class LoginOwnerTest < ActionDispatch::IntegrationTest
     get owner_login_path
     post owner_login_path, params: { session: { email: @owner.email,
                                           password: '1234abcd' } }
-    assert owner_is_logged_in?
+    assert is_logged_in?
     assert_redirected_to @owner
     follow_redirect!
     assert_template 'owners/show'
@@ -28,7 +28,7 @@ class LoginOwnerTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", owner_logout_path
     assert_select "a[href=?]", owner_path(@owner)
     delete owner_logout_path
-    assert_not owner_is_logged_in?
+    assert_not is_logged_in?
     assert_redirected_to root_url
     delete owner_logout_path
     follow_redirect!

@@ -27,14 +27,14 @@ class OwnersSignupTest < ActionDispatch::IntegrationTest
     assert_not owner.activated?
     owner_login(owner)
     get edit_account_activation_path("invalid token", email: owner.email)
-    assert_not owner_is_logged_in?
+    assert_not is_logged_in?
     get edit_account_activation_path(owner.activation_token, email: 'wrong')
-    assert_not owner_is_logged_in?
+    assert_not is_logged_in?
     get edit_account_activation_path(owner.activation_token, email: owner.email)
     assert owner.reload.activated?
     follow_redirect!
     assert_template 'owners/show'
     assert_not flash.empty?
-    assert owner_is_logged_in?
+    assert is_logged_in?
   end
 end

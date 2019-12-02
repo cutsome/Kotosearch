@@ -1,6 +1,7 @@
 module AgentSessionsHelper
 
   def agent_log_in(agent)
+    #return false unless agent?(agent)
     session[:agent_id] = agent.id
   end
 

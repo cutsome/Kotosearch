@@ -12,9 +12,9 @@ class AgentsController < ApplicationController
   end
 
   def create
-    @agent = Agent.new(agent_params)
+    @agent = Agent.new(object_params)
     if @agent.save
-      @agent.agent_send_activation_email
+      @agent.send_activation_email
       flash[:info] = "メールを確認し、アカウントを有効化してください"
       redirect_to root_url
     else
@@ -30,7 +30,7 @@ class AgentsController < ApplicationController
   end
 
   def update
-    if @agent.update(agent_params)
+    if @agent.update(object_params)
       flash[:success] = "編集が完了しました"
       redirect_to @agent
     else
@@ -45,7 +45,7 @@ class AgentsController < ApplicationController
   end
 
   private
-    def agent_params
+    def object_params
       params.require(:agent).permit(:name, :email, :password, :password_confirmation)
     end
 

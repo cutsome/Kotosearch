@@ -13,16 +13,12 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  def agent_is_logged_in?
-    !session[:agent_id].nil?
+  def is_logged_in?
+    !session[:agent_id].nil? || !session[:owner_id].nil?
   end
 
   def agent_login(agent)
     session[:agent_id] = agent.id
-  end
-
-  def owner_is_logged_in?
-    !session[:owner_id].nil?
   end
 
   def owner_login(owner)
