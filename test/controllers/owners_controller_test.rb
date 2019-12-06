@@ -45,14 +45,14 @@ class OwnersControllerTest < ActionDispatch::IntegrationTest
     assert_not @other_owner.reload.admin?
   end
 
-  test "未ログイン状態でのdeleteアクセスはログイン画面にリダイレクト" do
+  test "未ログイン状態での削除アクションはログイン画面にリダイレクト" do
     assert_no_difference 'Owner.count' do
       delete owner_path(@owner)
     end
     assert_redirected_to owner_login_url
   end
 
-  test "ログイン済の他ユーザーからのdeleteアクセスはルートにリダイレクト" do
+  test "ログイン済の他ユーザーからの削除アクションはルートにリダイレクト" do
     owner_login(@other_owner)
     assert_no_difference 'Owner.count' do
       delete owner_path(@owner)

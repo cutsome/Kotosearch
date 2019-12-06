@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get '/owner_login', to: 'owner_sessions#new'
   post '/agent_login', to: 'agent_sessions#create'
   post '/owner_login', to: 'owner_sessions#create'
-  delete '/agent_logout', to: 'agent_sessions#destroy'
-  delete '/owner_logout', to: 'owner_sessions#destroy'
+  get '/agent_logout', to: 'agent_sessions#destroy'
+  get '/owner_logout', to: 'owner_sessions#destroy'
   resources :agents
   resources :owners
   resources :account_activations, only: [:edit]

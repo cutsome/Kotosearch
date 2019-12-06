@@ -12,7 +12,7 @@ class OwnersController < ApplicationController
   end
 
   def create
-    @owner = Owner.new(object_params)
+    @owner = Owner.new(owner_params)
     if @owner.save
       @owner.send_activation_email
       flash[:info] = "メールを確認し、アカウントを有効化してください"
@@ -30,7 +30,7 @@ class OwnersController < ApplicationController
   end
 
   def update
-    if @owner.update(object_params)
+    if @owner.update(owner_params)
       flash[:success] = "編集が完了しました"
       redirect_to @owner
     else
@@ -45,7 +45,7 @@ class OwnersController < ApplicationController
   end
 
   private
-    def object_params
+    def owner_params
       params.require(:owner).permit(:name, :email, :password, :password_confirmation)
     end
 

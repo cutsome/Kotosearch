@@ -6,6 +6,26 @@ body {
   line-height: 1.8;
 }
 
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+input[type='text'],input[type='file'],
+input[type='email'],input[type='password'],
+input[type='submit'],textarea {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type='text']:focus,input[type='file']:focus,
+input[type='email']:focus,input[type='password']:focus,
+input[type='submit']:focus,input[type='url']:focus,
+textarea:focus{
+  outline:0
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -269,7 +289,7 @@ li {
 .form {
   padding-bottom: 100px;
   margin: 0 auto 80px;
-  width: 550px;
+  width: 700px;
   .form-headline {
     margin: 40px 0;
     text-align: center;
@@ -285,27 +305,84 @@ li {
   }
   .form-container {
     display: block;
-    padding: 40px 40px 40px 0;
-    border-radius: 4px;
+    padding: 20px 60px 60px;
+    border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     .form-layout {
-      display: grid;
-      grid-template-columns: 200px 1fr;
+      position: relative;
+      margin: auto;
+      padding: 20px 60px;
+      .form-label-ttl {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+      .tag-item {
+        display: inline-block;
+        padding: 4px 8px;
+        margin: 0 6px 6px 0;
+        font-size: 13px;
+        border-radius: 4px;
+        background: #eae6dc;
+        transition: 0.3s all;
+        cursor: pointer;
+        input {
+          display: none;
+        }
+        span {
+          margin-right: 4px;
+          color: #8c2a2a;
+        }
+        &:hover {
+          color: #fff;
+          background: #8c2a2a;
+          span {
+            color: #fff;
+          }
+        }
+      }
+      .active {
+        color: #fff;
+        background: #8c2a2a;
+        span {
+          color: #fff;
+        }
+      }
       .form-label {
-        grid-column: 1 / 2;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        margin-left: 5px;
+        display: inline-block;
         position: relative;
-        margin: 20px 40px 30px;
-        width: auto;
-        text-align: right;
+        top: 10px;
+        transition: all 0.5s ease-in-out;
+        opacity: 0.6;
+      }
+      .target_audience {
+        display: block;
+        margin-top: 9px;
       }
       .form-block {
-        grid-column: 2 / 3;
-        position: relative;
-        margin: 20px 0 30px;
-        width: auto;
-        height: 30px;
-        border-radius: 4px;
+        width: 100%;
+        padding: 15px 20px;
+        display: block;
+        height: 15px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 15px 0;
+        transition: all 0.5s ease-in-out;
+        &:focus {
+          border: 2px solid rgba(0, 0, 0, 0.5);
+          border-radius: 20px;
+          background: rgba(0, 0, 0, 0.1);
+          opacity: 0.6;
+        }
       }
       .checkbox {
         margin-top: -15px;
@@ -323,7 +400,7 @@ li {
         display: inline-block;
         text-decoration: none;
         color: #FFF;
-        margin: 20px 0 20px 20px;
+        margin: 20px;
         width: 120px;
         height: 120px;
         line-height: 120px;
@@ -488,3 +565,6 @@ li {
     }
   }
 }
+
+
+/* show pages */

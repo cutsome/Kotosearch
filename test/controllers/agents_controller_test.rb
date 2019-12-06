@@ -45,14 +45,14 @@ class AgentsControllerTest < ActionDispatch::IntegrationTest
     assert_not @other_agent.reload.admin?
   end
 
-  test "未ログイン状態でのdeleteアクセスはログイン画面にリダイレクト" do
+  test "未ログイン状態での削除アクションはログイン画面にリダイレクト" do
     assert_no_difference 'Agent.count' do
       delete agent_path(@agent)
     end
     assert_redirected_to agent_login_url
   end
 
-  test "ログイン済の他ユーザーからのdeleteアクセスはルートにリダイレクト" do
+  test "ログイン済の他ユーザーからの削除アクションはルートにリダイレクト" do
     agent_login(@other_agent)
     assert_no_difference 'Agent.count' do
       delete agent_path(@agent)
