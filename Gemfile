@@ -7,7 +7,7 @@ ruby '2.6.2'
 gem 'rails', '~> 6.0.1'
 gem 'mysql2'
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma', '>= 4.3.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -28,7 +28,6 @@ gem 'faker'
 gem 'kaminari'
 
 gem 'mail-iso-2022-jp'
-
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
