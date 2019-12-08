@@ -16,4 +16,5 @@ require('jquery')
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import "../src/application.scss"
-import "./agent_new.js"
+import "../stylesheets/total.scss"
+import "../javascripts/agent_new.js"

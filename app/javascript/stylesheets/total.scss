@@ -213,22 +213,22 @@ li {
 }
 
 .my_modal_overlay{
-    display: none;
-    position: fixed;
-    z-index: 90000;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    background-color: #111;
-    opacity: 0.3;
-    cursor: pointer;
+  display: none;
+  position: fixed;
+  z-index: 90000;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background-color: #111;
+  opacity: 0.3;
+  cursor: pointer;
 }
 
 #my_modal1:checked ~ .my_modal_body1, #my_modal1:checked ~ .my_modal_overlay{
-    display: block;
+  display: block;
 }
 
 /* container */
@@ -335,19 +335,12 @@ li {
           margin-right: 4px;
           color: #8c2a2a;
         }
-        &:hover {
+        &__active, &:hover {
           color: #fff;
           background: #8c2a2a;
           span {
             color: #fff;
           }
-        }
-      }
-      .active {
-        color: #fff;
-        background: #8c2a2a;
-        span {
-          color: #fff;
         }
       }
       .form-label {
@@ -361,10 +354,6 @@ li {
         top: 10px;
         transition: all 0.5s ease-in-out;
         opacity: 0.6;
-      }
-      .target_audience {
-        display: block;
-        margin-top: 9px;
       }
       .form-block {
         width: 100%;
@@ -383,6 +372,10 @@ li {
           background: rgba(0, 0, 0, 0.1);
           opacity: 0.6;
         }
+      }
+      .target_audience {
+        display: block;
+        margin-top: 9px;
       }
       .checkbox {
         margin-top: -15px;

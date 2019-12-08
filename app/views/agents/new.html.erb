@@ -1,59 +1,11 @@
 <% provide(:title, 'エージェント登録') %>
-
+<% provide(:button_text, '新規登録') %>
 <div class="form">
   <div class="form-headline">
     <h1 class="title">エージェント 無料会員登録</h1>
     <p class="description">以下の項目を入力して、Kotosearchに登録してください</p>
   </div>
-  <div class="form-container">
-    <%= form_with model: @agent do |f| %>
-      <%= render "shared/error_messages", model: @agent %>
-      <div class="form-layout">
-        <%= f.label :name, "会社名", class: "form-label" %>
-        <%= f.text_field :name, placeholder: "例) 株式会社◯◯", class: "form-block" %>
-
-        <%= f.label :email, "メールアドレス", class: "form-label" %>
-        <%= f.text_field :email, class: "form-block" %>
-
-        <%= f.label :category, "業種", class: "form-label" %>
-        <%= f.text_field :category, placeholder: "例) ランドオペレーター", class: "form-block" %>
-
-        <%= f.label :address, "住所", class: "form-label" %>
-        <%= f.text_field :address, placeholder: "例) 京都市東山区四条大橋東詰", class: "form-block" %>
-
-        <%= f.label :scale, "会社規模", class: "form-label" %>
-        <%= f.text_field :scale, placeholder: "例) 大", class: "form-block" %>
-
-        <div class="form-label-ttl">
-          <%= f.label :target_category, "ターゲット国", class: "form-label" %>
-        </div>
-        
-        <p class="tag-item"><%= f.radio_button :target_category, 1 %><span>#</span>アメリカ</p>
-        <p class="tag-item"><%= f.radio_button :target_category, 2 %><span>#</span>欧州</p>
-        <p class="tag-item"><%= f.radio_button :target_category, 3 %><span>#</span>オーストラリア</p>
-        <p class="tag-item"><%= f.radio_button :target_category, 4 %><span>#</span>中国</p>
-        <p class="tag-item"><%= f.radio_button :target_category, 5 %><span>#</span>台湾</p>
-        <p class="tag-item"><%= f.radio_button :target_category, 6 %><span>#</span>韓国</p>
-        <p class="tag-item"><%= f.radio_button :target_category, 7 %><span>#</span>東南アジア</p>
-        <p class="tag-item"><%= f.radio_button :target_category, 8 %><span>#</span>南アメリカ</p>
-        <p class="tag-item"><%= f.radio_button :target_category, 9 %><span>#</span>中東</p>
-        <p class="tag-item"><%= f.radio_button :target_category, 10 %><span>#</span>アフリカ</p>
-        <p class="tag-item"><%= f.radio_button :target_category, 11 %><span>#</span>その他</p>
-
-        <%= f.label :target_audience, "ターゲット層", class: "form-label target_audience" %>
-        <%= f.text_field :target_audience, placeholder: "例) 富裕層", class: "form-block" %>
-
-        <%= f.label :password, "パスワード (半角英数8文字以上)", class: "form-label" %>
-        <%= f.password_field :password, class: "form-block" %>
-
-        <%= f.label :password_confirmation, "パスワード [確認用]", class: "form-label" %>
-        <%= f.password_field :password_confirmation, class: "form-block" %>
-      </div>
-      <div class="btn-location">
-        <%= f.submit "新規登録", class: "button" %>
-      </div>
-    <% end %>
-  </div>
+  <%= render 'layouts/agent_form' %>
 </div>
 
 <!-- Facebookで登録する -->

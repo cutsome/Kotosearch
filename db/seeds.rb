@@ -37,3 +37,5 @@ Owner.create!(name:  "owner",
          activated: true,
          activated_at: Time.zone.now)
 end
+
+%W[アメリカ 欧州 オーストラリア 中国 台湾 韓国 東南アジア 南アメリカ 中東 アフリカ その他].each { |a| Target.create(name: a) }

@@ -46,8 +46,13 @@ class AgentsController < ApplicationController
 
   private
     def agent_params
-      params.require(:agent).permit(:name, :email, :password, :password_confirmation,
-                      :category, :address, :scale, :target_category, :target_audience)
+      params.require(:agent).permit(
+        :name,
+        :email, :password, :password_confirmation,
+        :category, :address, :scale,
+        :target_audience,
+        { target_ids: [] }
+      )
     end
 
     def logged_in_agent
