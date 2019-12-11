@@ -1,11 +1,51 @@
 <% provide(:title, "エージェント詳細") %>
 
-<div class="contents">
-  <div class="agent_page">
-    <div class="">
+<%= tag.div class: 'overview' do %>
+  <%= tag.div class: 'overview_top' do %>
+    <%= tag.div "画像", class: 'overview_img' %>
+    <%= tag.div class: 'overview_head' do %>
+      <%= tag.div @agent.name, class: 'overview_head_name' %>
+      <%= tag.div class: 'tag' do %>
+        <% @agent.targets.each do |target| %>
+          <%= link_to target_path(target), class: "tag-item tag-item__small" do %>
+            <span>#</span><%= target.name %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= tag.div class: 'overview_info' do %>
+      <%= tag.div class: 'line' %>
+      <%= tag.div class: 'overview_info_item' do %>
+        <%= tag.div "社名", class: 'overview_info_item_ttl' %>
+        <%= tag.div @agent.name, class: 'overview_info_item_contents' %>
+      <% end %>
+      <%= tag.div class: 'line' %>
+      <%= tag.div class: 'overview_info_item' do %>
+        <%= tag.div "業種", class: 'overview_info_item_ttl' %>
+        <%= tag.div @agent.category, class: 'overview_info_item_contents' %>
+      <% end %>
+      <%= tag.div class: 'line' %>
+      <%= tag.div class: 'overview_info_item' do %>
+        <%= tag.div "住所", class: 'overview_info_item_ttl' %>
+        <%= tag.div @agent.address, class: 'overview_info_item_contents' %>
+      <% end %>
+      <%= tag.div class: 'line' %>
+      <%= tag.div class: 'overview_info_item' do %>
+        <%= tag.div "事業規模", class: 'overview_info_item_ttl' %>
+        <%= tag.div @agent.scale, class: 'overview_info_item_contents' %>
+      <% end %>
+      <%= tag.div class: 'line' %>
+      <%= tag.div class: 'overview_info_item' do %>
+        <%= tag.div "ターゲット層", class: 'overview_info_item_ttl' %>
+        <%= tag.div @agent.target_audience, class: 'overview_info_item_contents' %>
+      <% end %>
+    <% end %>
+    <%#= link_to "詳しく見る", @agent.url %>
+  <% end %>
+  <%= tag.div class: 'agent_search' do %>
 
-    </div>
-  </div>
-</div>
-<%= @agent.name %>,<%= @agent.email %>
-<%= link_to "編集", edit_agent_path(@agent) %>
+  <% end %>
+<% end %>
+<% if current_agent?(@agent) %>
+  <%= link_to "編集", edit_agent_path(@agent) %>
+<% end %>

@@ -17,10 +17,8 @@ class AgentsEditTest < ActionDispatch::IntegrationTest
 
   test "正しい編集情報" do
     get edit_agent_path(@agent)
-    assert_equal session[:forwarding_url], edit_agent_url(@agent)
     agent_login(@agent)
     assert_redirected_to edit_agent_url(@agent)
-    assert_nil session[:forwarding_url]
     name = "masahiro nishikawa"
     email = "abcd@gmail.com"
     patch agent_path(@agent), params: { agent: { name: name, email: email } }

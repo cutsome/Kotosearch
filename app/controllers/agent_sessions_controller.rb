@@ -8,7 +8,7 @@ class AgentSessionsController < ApplicationController
       if agent.activated?
         agent_log_in agent
         params[:session][:remember_me] == '1' ? agent_remember(agent) : forget(agent)
-        redirect_back_or agent
+        redirect_to agent
       else
         message = "アカウントが有効化されていません"
         message += "メールのアカウント有効化リンクをお確かめください"

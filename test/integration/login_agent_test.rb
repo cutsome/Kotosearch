@@ -27,10 +27,10 @@ class LoginAgentTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", agent_login_path, count: 0
     assert_select "a[href=?]", agent_logout_path
     assert_select "a[href=?]", agent_path(@agent)
-    get agent_logout_path
+    delete agent_logout_path
     assert_not agent_is_logged_in?
     assert_redirected_to root_url
-    get agent_logout_path
+    delete agent_logout_path
     follow_redirect!
     assert_select "a[href=?]", agent_login_path
     assert_select "a[href=?]", agent_logout_path, count: 0
@@ -44,7 +44,7 @@ class LoginAgentTest < ActionDispatch::IntegrationTest
 
   test "remember_meオフ" do
     agent_login(@agent, remember_me: '1')
-    get agent_logout_path
+    delete agent_logout_path
     agent_login(@agent, remember_me: '0')
     assert_empty cookies['remember_token']
   end

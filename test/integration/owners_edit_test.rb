@@ -17,10 +17,8 @@ class OwnersEditTest < ActionDispatch::IntegrationTest
 
   test "正しい編集情報" do
     get edit_owner_path(@owner)
-    assert_equal session[:forwarding_url], edit_owner_url(@owner)
     owner_login(@owner)
     assert_redirected_to edit_owner_url(@owner)
-    assert_nil session[:forwarding_url]
     name = "masahiro nishikawa"
     email = "abcd@gmail.com"
     patch owner_path(@owner), params: { owner: { name: name, email: email } }

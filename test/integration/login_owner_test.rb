@@ -27,10 +27,10 @@ class LoginOwnerTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", owner_login_path, count: 0
     assert_select "a[href=?]", owner_logout_path
     assert_select "a[href=?]", owner_path(@owner)
-    get owner_logout_path
+    delete owner_logout_path
     assert_not owner_is_logged_in?
     assert_redirected_to root_url
-    get owner_logout_path
+    delete owner_logout_path
     follow_redirect!
     assert_select "a[href=?]", owner_login_path
     assert_select "a[href=?]", owner_logout_path, count: 0
@@ -44,7 +44,7 @@ class LoginOwnerTest < ActionDispatch::IntegrationTest
 
   test "remember_meオフ" do
     owner_login(@owner, remember_me: '1')
-    get owner_logout_path
+    delete owner_logout_path
     owner_login(@owner, remember_me: '0')
     assert_empty cookies['remember_token']
   end

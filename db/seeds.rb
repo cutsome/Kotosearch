@@ -1,5 +1,9 @@
 Agent.create!(name:  "agent",
              email: "agent@Koto.jp",
+             category: "旅行会社",
+             address: "京都府京都市",
+             scale: "従業員100~150名",
+             target_audience: "中間層",
              password:              "1234abcd",
              password_confirmation: "1234abcd",
              admin: true,
@@ -9,9 +13,17 @@ Agent.create!(name:  "agent",
 50.times do |n|
   name = Faker::Name.name
   email = "agent#{n + 1}@Koto.jp"
+  category = "旅行会社",
+  address = "京都府京都市",
+  scale = "従業員100~150名",
+  target_audience = "中間層",
   password = "1234abcd"
   Agent.create!(name: name,
          email: email,
+         category: category,
+         address: address,
+         scale: scale,
+         target_audience: target_audience,
          password: password,
          password_confirmation: password,
          activated: true,

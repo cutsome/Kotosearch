@@ -1,0 +1,31 @@
+.tag {
+  margin-bottom: 4px;
+  &-item {
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 0 6px 6px 0;
+    font-size: 13px;
+    border-radius: 4px;
+    background: #eae6dc;
+    transition: 0.3s all;
+    cursor: pointer;
+    input {
+      display: none;
+    }
+    span {
+      margin-right: 4px;
+      color: #8c2a2a;
+    }
+    &__active, &:hover {
+      color: #fff;
+      background: #8c2a2a;
+      span {
+        color: #fff;
+      }
+    }
+    &__small {
+      color: #000;
+      margin-bottom: 0;
+    }
+  }
+}

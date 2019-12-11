@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'targets/show'
   root to: 'home#index'
   get '/help', to: 'home#help'
   get '/agent_signup', to: 'agents#new'
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :agents
   resources :owners
+  resources :targets
+  
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 end

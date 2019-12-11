@@ -8,7 +8,7 @@ class OwnerSessionsController < ApplicationController
       if owner.activated?
         owner_log_in owner
         params[:session][:remember_me] == '1' ? owner_remember(owner) : forget(owner)
-        redirect_back_or owner
+        redirect_to owner
       else
         message = "アカウントが有効化されていません"
         message += "メールのアカウント有効化リンクをお確かめください"
