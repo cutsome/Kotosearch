@@ -2,9 +2,11 @@
 
 <%= tag.div class: 'overview' do %>
   <%= tag.div class: 'overview_top' do %>
+    <%# イメージ画像・会社名 %>
     <%= tag.div "画像", class: 'overview_img' %>
     <%= tag.div class: 'overview_head' do %>
       <%= tag.div @agent.name, class: 'overview_head_name' %>
+      <%# ハッシュタグ %>
       <%= tag.div class: 'tag' do %>
         <% @agent.targets.each do |target| %>
           <%= link_to target_path(target), class: "tag-item tag-item__small" do %>
@@ -13,7 +15,9 @@
         <% end %>
       <% end %>
     <% end %>
-    <%= tag.div class: 'overview_info' do %>
+    <%# 会社概要 %>
+      <%= tag.div class: 'overview_info' do %>
+      <%= tag.div "会社概要", class: 'overview_abstract' %>
       <%= tag.div class: 'line' %>
       <%= tag.div class: 'overview_info_item' do %>
         <%= tag.div "社名", class: 'overview_info_item_ttl' %>
@@ -31,7 +35,7 @@
       <% end %>
       <%= tag.div class: 'line' %>
       <%= tag.div class: 'overview_info_item' do %>
-        <%= tag.div "事業規模", class: 'overview_info_item_ttl' %>
+        <%= tag.div "会社規模", class: 'overview_info_item_ttl' %>
         <%= tag.div @agent.scale, class: 'overview_info_item_contents' %>
       <% end %>
       <%= tag.div class: 'line' %>

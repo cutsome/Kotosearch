@@ -46,7 +46,13 @@ class OwnersController < ApplicationController
 
   private
     def owner_params
-      params.require(:owner).permit(:name, :email, :password, :password_confirmation)
+      params.require(:owner).permit(
+        :name, :email,
+        :address, :scale,
+        :period, :target_audience,
+        :password, :password_confirmation,
+        { leisure_ids: [] }
+      )
     end
 
     def logged_in_owner

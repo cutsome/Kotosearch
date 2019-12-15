@@ -1,27 +1,28 @@
 <div class="form-container">
-  <%= form_with model: @agent do |f| %>
-    <%= render "shared/error_messages", model: @agent %>
+  <%= form_with model: @owner do |f| %>
+    <%= render "shared/error_messages", model: @owner %>
+
     <div class="form-layout">
-      <%= f.label :name, "会社名", class: "form-label" %>
+      <%= f.label :name, "会社名・団体名", class: "form-label" %>
       <%= f.text_field :name, placeholder: "例) 株式会社◯◯", class: "form-block" %>
 
       <%= f.label :email, "メールアドレス", class: "form-label" %>
       <%= f.email_field :email, class: "form-block" %>
 
-      <%= f.label :category, "業種", class: "form-label" %>
-      <%= f.text_field :category, placeholder: "例) ランドオペレーター", class: "form-block" %>
-
       <%= f.label :address, "住所", class: "form-label" %>
       <%= f.text_field :address, placeholder: "例) 京都市東山区四条大橋東詰", class: "form-block" %>
 
-      <%= f.label :scale, "会社規模", class: "form-label" %>
+      <%= f.label :scale, "会社・団体規模", class: "form-label" %>
       <%= f.select :scale, ['従業員 0~50人', '従業員 51~100人', '従業員 101~300人',
        '従業員 301~1000人', '従業員 1001人~'], { include_blank: '選択ボックス' }, class: "select-box" %>
 
+      <%= f.label :period, "営業期間", class: "form-label" %>
+      <%= f.text_field :period, placeholder: "例) 3月〜10月 or 通年  etc.", class: "form-block" %>
+
       <div class="form-label-ttl">
-        <%= f.label :target_ids, "ターゲット国", class: "form-label" %>
+        <%= f.label :leisure_ids, "事業内容", class: "form-label" %>
       </div>
-      <%= f.collection_check_boxes(:target_ids, Target.all, :id, :name) do |c| %>
+      <%= f.collection_check_boxes(:leisure_ids, Leisure.all, :id, :name) do |c| %>
         <label class="tag-item">
           <%= c.check_box %>
           <span>#</span><%= c.text %>

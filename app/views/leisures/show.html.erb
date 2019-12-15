@@ -1,0 +1,19 @@
+<%= provide(:title, "# #{@leisure.name}") %>
+
+<div class="business-layout">
+  <div class="business-layout-header">
+    <span>#</span><%= @leisure.name %>
+  </div>
+  <div class="business-layout-main">
+    <% @leisure.owners.each do |owner| %>
+      <div class="business-item">
+        <div class="business-image">画像</div>
+        <div class="business-info">
+          <%= link_to owner.name, owner, class: "business-item-name" %>
+          <%= link_to owner.email, owner, class: "business-item-email" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%#= paginate @owners %>
+</div>
