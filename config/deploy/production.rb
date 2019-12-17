@@ -6,7 +6,7 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 server "18.176.74.100", user: "masahiro", roles: %w{app db web}
 # server "db.example.com", user: "deploy", roles: %w{db}
-set :ssh_options, keys: '~/.ssh/first_aws_rsa'
+set :ssh_options, keys: '~/.ssh/Koto_key_rsa'
 
 
 # role-based syntax
