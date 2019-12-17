@@ -49,9 +49,8 @@ class AgentsController < ApplicationController
       params.require(:agent).permit(
         :name,
         :email, :password, :password_confirmation,
-        :category, :address, :scale,
-        :target_audience,
-        { target_ids: [] }
+        :category, :address, :scale, :photo,
+        :target_audience, { target_ids: [] }
       )
     end
 

@@ -27,6 +27,7 @@ class OwnersController < ApplicationController
   end
 
   def edit
+    @owner.photo
   end
 
   def update
@@ -50,7 +51,7 @@ class OwnersController < ApplicationController
         :name, :email,
         :address, :scale,
         :period, :target_audience,
-        :password, :password_confirmation,
+        :password, :password_confirmation, :photo,
         { leisure_ids: [] }
       )
     end

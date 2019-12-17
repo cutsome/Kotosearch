@@ -49,3 +49,53 @@ li {
   margin: 16px 0;
   background: #a6a6a6;
 }
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media(min-width: 576px) {
+  .container {
+    max-width: 100%;
+    .business-layout {
+      max-width: 540px;
+    }
+  }
+}
+
+@media(min-width: 768px) {
+  .container {
+    max-width: 100%;
+    .business-layout {
+      max-width: 720px;
+    }
+  }
+}
+
+@media(min-width: 992px) {
+  .container {
+    max-width: 100%;
+    .business-layout {
+      max-width: 960px;
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  .container {
+    max-width: 100%;
+    .business-layout {
+      max-width: 960px;
+    }
+  }
+}
+
+@media(min-width: 1400px) {
+  .container {
+    max-width: 100%;
+    .business-layout {
+      max-width: 960px;
+    }
+  }
+}

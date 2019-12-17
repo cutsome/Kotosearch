@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_15_055550) do
+ActiveRecord::Schema.define(version: 2019_12_14_073154) do
 
   create_table "agent_targets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "agent_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_12_15_055550) do
     t.string "address"
     t.string "scale"
     t.string "target_audience"
+    t.string "photo"
     t.index ["email"], name: "index_agents_on_email", unique: true
   end
 
@@ -73,17 +74,8 @@ ActiveRecord::Schema.define(version: 2019_12_15_055550) do
     t.string "scale"
     t.string "period"
     t.string "target_audience"
+    t.string "photo"
     t.index ["email"], name: "index_owners_on_email", unique: true
-  end
-
-  create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "photos"
-    t.integer "agent_id"
-    t.integer "owner_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["agent_id"], name: "index_photos_on_agent_id"
-    t.index ["owner_id"], name: "index_photos_on_owner_id"
   end
 
   create_table "targets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

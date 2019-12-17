@@ -2,9 +2,10 @@ class Agent < ApplicationRecord
 
   has_many :agent_targets
   has_many :targets, through: :agent_targets
-  has_many :photos, dependent: :destroy
   accepts_nested_attributes_for :agent_targets
 
+  mount_uploader :photo, PhotoUploader
+  
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest

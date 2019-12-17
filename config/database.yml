@@ -10,7 +10,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
   username: root
-  password: 82013782Ab/
+  password:
   host: localhost
 
 development:
@@ -27,3 +27,4 @@ test:
 production:
   <<: *default
   database: Kotosearch_development
+  socket: /var/lib/mysql/mysql.sock
