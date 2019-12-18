@@ -6,7 +6,11 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 server "18.176.74.100", user: "masahiro", roles: %w{app db web}
 # server "db.example.com", user: "deploy", roles: %w{db}
-set :ssh_options, keys: '~/.ssh/Koto_key_rsa'
+set :ssh_options, {
+  keys: %w(~/.ssh/id_rsa),
+  forward_agent: true,
+  auth_methods: %w(publickey)
+}
 
 
 # role-based syntax
@@ -49,13 +53,13 @@ set :ssh_options, keys: '~/.ssh/Koto_key_rsa'
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-# server "example.com",
-#   user: "user_name",
-#   roles: %w{web app},
-#   ssh_options: {
-#     user: "user_name", # overrides user setting above
-#     keys: %w(/home/user_name/.ssh/id_rsa),
-#     forward_agent: false,
-#     auth_methods: %w(publickey password)
-#     # password: "please use keys"
-#   }
+#server "18.176.74.100",
+#  user: "masahiro",
+#  roles: %w{web db app},
+#  ssh_options: {
+#    port: 22022,
+#    user: "masahiro", # overrides user setting above
+#    forward_agent: false,
+#    auth_methods: %w(publickey password)
+#    password: "please use keys"
+#  }

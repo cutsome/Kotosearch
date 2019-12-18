@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_12_15_055550) do
     t.string "address"
     t.string "scale"
     t.string "target_audience"
+    t.string "photo"
     t.index ["email"], name: "index_agents_on_email", unique: true
   end
 
@@ -73,6 +74,7 @@ ActiveRecord::Schema.define(version: 2019_12_15_055550) do
     t.string "scale"
     t.string "period"
     t.string "target_audience"
+    t.string "photo"
     t.index ["email"], name: "index_owners_on_email", unique: true
   end
 
