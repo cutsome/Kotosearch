@@ -281,11 +281,8 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv
   capybara (>= 2.15)
-<<<<<<< HEAD
   ed25519 (>= 1.2, < 2.0)
-=======
   carrierwave
->>>>>>> image-upload
   faker
   jbuilder (~> 2.7)
   kaminari
