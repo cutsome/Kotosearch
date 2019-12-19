@@ -2,21 +2,13 @@
 lock "~> 3.11.2"
 
 set :application, "Kotosearch"
-<<<<<<< HEAD
 set :repo_url, "https://github.com/cutsome/Kotosearch.git"
-=======
-set :repo_url, "git@github.com:cutsome/Kotosearch.git"
->>>>>>> image-upload
 
 # Default branch is :master
 set :branch, 'master'
 
 # Default deploy_to directory is /var/www/my_app_name
-<<<<<<< HEAD
 set :deploy_to, "/var/www/rails/Kotosearch"
-=======
-set :deploy_to, "/var/www/Kotosearch"
->>>>>>> image-upload
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
