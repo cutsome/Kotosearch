@@ -6,11 +6,15 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 server "18.176.74.100", user: "masahiro", roles: %w{app db web}
 # server "db.example.com", user: "deploy", roles: %w{db}
+<<<<<<< HEAD
 set :ssh_options, {
   keys: %w(~/.ssh/id_rsa),
   forward_agent: true,
   auth_methods: %w(publickey)
 }
+=======
+set :ssh_options, keys: '~/.ssh/first_aws_rsa'
+>>>>>>> image-upload
 
 
 # role-based syntax
@@ -53,6 +57,7 @@ set :ssh_options, {
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
+<<<<<<< HEAD
 #server "18.176.74.100",
 #  user: "masahiro",
 #  roles: %w{web db app},
@@ -63,3 +68,15 @@ set :ssh_options, {
 #    auth_methods: %w(publickey password)
 #    password: "please use keys"
 #  }
+=======
+# server "example.com",
+#   user: "user_name",
+#   roles: %w{web app},
+#   ssh_options: {
+#     user: "user_name", # overrides user setting above
+#     keys: %w(/home/user_name/.ssh/id_rsa),
+#     forward_agent: false,
+#     auth_methods: %w(publickey password)
+#     # password: "please use keys"
+#   }
+>>>>>>> image-upload

@@ -4,5 +4,6 @@ class AddManyColumnsToAgents < ActiveRecord::Migration[6.0]
     add_column :agents, :address, :string
     add_column :agents, :scale, :string
     add_column :agents, :target_audience, :string
+    add_column :agents, :photo, :string
   end
 end

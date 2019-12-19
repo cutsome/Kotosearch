@@ -32,6 +32,9 @@
       <%= f.label :target_audience, "ターゲット層", class: "form-label target_audience" %>
       <%= f.text_field :target_audience, placeholder: "例) 富裕層", class: "form-block" %>
 
+      <%= f.label :photo, "画像", class: "form-label" %>
+      <%= f.file_field :photo, class: "image-form" %>
+
       <%= f.label :password, "パスワード (半角英数8文字以上)", class: "form-label" %>
       <%= f.password_field :password, class: "form-block" %>
 

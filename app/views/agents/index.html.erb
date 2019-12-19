@@ -4,7 +4,11 @@
   <div class="business-layout-main">
     <% @agents.each do |agent| %>
       <div class="business-item">
-        <div class="business-image">画像</div>
+        <div class="business-image">
+          <% if agent.photo? %>
+            <%= image_tag agent.photo.url(:thumb30), class: "business-image" %>
+          <% end %>
+        </div>
         <div class="business-info">
           <%= link_to agent.name, agent, class: "business-item-name" %>
           <% if agent_logged_in? && current_agent.admin? && !current_agent?(agent) %>

@@ -3,7 +3,7 @@
 <%= tag.div class: 'overview' do %>
   <%= tag.div class: 'overview_top' do %>
     <%# イメージ画像・会社名 %>
-    <%= tag.div "画像", class: 'overview_img' %>
+    <%= image_tag @agent.photo.url(:thumb) if @agent.photo? %>
     <%= tag.div class: 'overview_head' do %>
       <%= tag.div @agent.name, class: 'overview_head_name' %>
       <%# ハッシュタグ %>
@@ -43,13 +43,13 @@
         <%= tag.div "ターゲット層", class: 'overview_info_item_ttl' %>
         <%= tag.div @agent.target_audience, class: 'overview_info_item_contents' %>
       <% end %>
+      <% if current_agent?(@agent) %>
+        <%= link_to "編集", edit_agent_path(@agent) %>
+      <% end %>
     <% end %>
     <%#= link_to "詳しく見る", @agent.url %>
   <% end %>
   <%= tag.div class: 'agent_search' do %>
 
   <% end %>
-<% end %>
-<% if current_agent?(@agent) %>
-  <%= link_to "編集", edit_agent_path(@agent) %>
 <% end %>
