@@ -161,7 +161,7 @@ GEM
     public_suffix (4.0.1)
     puma (4.3.1)
       nio4r (~> 2.0)
-    rack (2.0.7)
+    rack (2.0.8)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -281,8 +281,8 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv
   capybara (>= 2.15)
-  ed25519 (>= 1.2, < 2.0)
   carrierwave
+  ed25519 (>= 1.2, < 2.0)
   faker
   jbuilder (~> 2.7)
   kaminari
