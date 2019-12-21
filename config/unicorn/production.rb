@@ -14,7 +14,7 @@
   pid $pid
 
   preload_app true
-
+  
 
   before_exec do |server|
     ENV["BUNDLE_GEMFILE"] = '/var/www/rails/Kotosearch/current/Gemfile'
