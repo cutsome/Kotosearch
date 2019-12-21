@@ -17,7 +17,7 @@
 
 
   before_exec do |server|
-    ENV["BUNDLE_GEMFILE"] = 'Gemfile', $app_dir
+    ENV["BUNDLE_GEMFILE"] = '/var/www/rails/Kotosearch/current/Gemfile'
   end
 
   before_fork do |server, worker|
