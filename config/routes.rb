@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'photos/new'
-  get 'leisures/show'
-  get 'targets/show'
   root to: 'home#index'
   get '/help', to: 'home#help'
   get '/agent_signup', to: 'agents#new'

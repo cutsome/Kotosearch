@@ -6,11 +6,7 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 server "18.176.74.100", user: "masahiro", roles: %w{app db web}
 # server "db.example.com", user: "deploy", roles: %w{db}
-set :ssh_options, {
-  keys: %w(~/.ssh/Koto_key_rsa),
-  forward_agent: true,
-  auth_methods: %w(publickey)
-}
+set :ssh_options, keys: %w(~/.ssh/Koto_key_rsa)
 
 
 # role-based syntax
