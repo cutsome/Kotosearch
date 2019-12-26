@@ -13,5 +13,5 @@ import "../stylesheets/show.scss"
 import "../stylesheets/header.scss"
 import "../stylesheets/form.scss"
 import "../javascripts/agent_new.js"
-const images = require.context('../../assets/images/', true)
-const imagePath = (name) => images(name, true)
+//const images = require.context('../../assets/images/', true)
+//const imagePath = (name) => images(name, true)

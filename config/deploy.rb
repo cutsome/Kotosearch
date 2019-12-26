@@ -41,6 +41,8 @@ set :rbenv_ruby, '2.6.2'
 
 set :log_level, :debug
 
+set :assets_prefix, 'packs'
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do
