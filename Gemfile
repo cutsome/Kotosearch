@@ -17,6 +17,8 @@ gem 'faker'
 gem 'kaminari'
 gem 'mail-iso-2022-jp'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'hirb'
+gem 'hirb-unicode'
 
 # 画像アップ
 gem 'carrierwave'
