@@ -4,7 +4,8 @@ class Owner < ApplicationRecord
   has_many :leisures, through: :owner_leisures
   accepts_nested_attributes_for :owner_leisures
 
-  mount_uploader :photo, PhotoUploader
+  #mount_uploader :photo, PhotoUploader
+  has_one_attached :photo
 
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email

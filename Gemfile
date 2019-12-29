@@ -23,6 +23,7 @@ gem 'hirb-unicode'
 # 画像アップ
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'aws-sdk-s3', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -53,6 +54,10 @@ end
 
 group :production, :staging do
   gem 'unicorn'
+end
+
+group :production do
+  gem 'fog-aws'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

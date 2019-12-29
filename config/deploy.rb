@@ -62,7 +62,7 @@ namespace :deploy do
 
   desc 'Run seed'
   task :seed do
-    on roles(:app) do
+    on roles(:db) do
       with rails_env: fetch(:rails_env) do
         within current_path do
           execute :bundle, :exec, :rake, 'db:seed'
@@ -73,7 +73,7 @@ namespace :deploy do
 
   desc 'Reset database'
   task :reset do
-    on roles(:app) do
+    on roles(:db) do
       with rails_env: fetch(:rails_env) do
         within current_path do
           execute :bundle, :exec, :rake, 'db:reset'
