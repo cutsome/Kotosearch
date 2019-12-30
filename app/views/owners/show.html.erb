@@ -3,7 +3,7 @@
 <%= tag.div class: 'overview' do %>
   <%= tag.div class: 'overview_top' do %>
     <%# イメージ画像・会社名 %>
-    <%= image_tag @owner.photo.url(:thumb) if @owner.photo? %>
+    <%= image_tag @owner.photo.variant(resize: '540x400').processed %>
     <%= tag.div class: 'overview_head' do %>
       <%= tag.div @owner.name, class: 'overview_head_name' %>
       <%# ハッシュタグ %>

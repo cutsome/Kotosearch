@@ -5,8 +5,8 @@
     <% @owners.each do |owner| %>
       <div class="business-item">
         <div class="business-image">
-          <% if owner.photo? %>
-            <%= image_tag owner.photo.url(:thumb30), class: "business-image" %>
+          <% if owner.photo.attached? %>
+            <%= image_tag owner.photo.variant(resize: '220x160').processed, class: "business-image" %>
           <% end %>
         </div>
         <div class="business-info">

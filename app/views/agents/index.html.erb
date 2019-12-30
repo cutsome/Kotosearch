@@ -5,8 +5,8 @@
     <% @agents.each do |agent| %>
       <div class="business-item">
         <div class="business-image">
-          <% if agent.photo? %>
-            <%= image_tag agent.photo.url(:thumb30), class: "business-image" %>
+          <% if agent.photo.attached? %>
+            <%= image_tag agent.photo.variant(resize: '220x160').processed, class: "business-image" %>
           <% end %>
         </div>
         <div class="business-info">
