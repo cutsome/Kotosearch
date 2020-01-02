@@ -6,6 +6,7 @@ class Agent < ApplicationRecord
 
   #mount_uploader :photo, PhotoUploader
   has_one_attached :photo
+  delegate :variant, to: :photo, allow_nil: true
 
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
