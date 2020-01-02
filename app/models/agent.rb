@@ -4,9 +4,7 @@ class Agent < ApplicationRecord
   has_many :targets, through: :agent_targets
   accepts_nested_attributes_for :agent_targets
 
-  #mount_uploader :photo, PhotoUploader
   has_one_attached :photo
-  delegate :variant, to: :photo, allow_nil: true
 
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
