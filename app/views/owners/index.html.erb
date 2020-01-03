@@ -6,7 +6,7 @@
       <div class="business-item">
         <div class="business-image">
           <% if owner.photo.attached? %>
-            <%= image_tag owner.photo.variant(resize_to_fill: [220, 160]).processed, class: "business-image" %>
+            <%= image_tag owner.photo.variant(resize_to_fill:[220,160], crop:("220x160+0+0")).processed, class: "business-image" %>
           <% end %>
         </div>
         <div class="business-info">

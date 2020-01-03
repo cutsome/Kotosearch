@@ -4,7 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.2'
 
 gem 'rails', '~> 6.0.1'
-# mysql
 gem 'mysql2'
 gem 'puma', '>= 4.3.1'
 gem 'sass-rails', '>= 6'
@@ -20,7 +19,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'hirb'
 gem 'hirb-unicode'
 
-# 画像アップ
+# 画像関連
 gem 'mini_magick'
 gem 'aws-sdk-s3', require: false
 gem 'image_processing', '~>1.2'
@@ -54,10 +53,6 @@ end
 
 group :production, :staging do
   gem 'unicorn'
-end
-
-group :production do
-  gem 'fog-aws'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
