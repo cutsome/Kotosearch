@@ -1,24 +1,22 @@
-# README
+# Kotosearch
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+インバウンド（訪日外国人）事業者用マッチングフォーム。体験アクティビティの提供者 × 旅行会社。
 
-Things you may want to cover:
+### URL
 
-* Ruby version
+http://kotosearch.com/
 
-* System dependencies
+### バージョン
 
-* Configuration
+Ruby　2.6.2<br>
+Rails　6.0.2.1
 
-* Database creation
+### 技術・機能
+|技術|詳細|
+|:----:|----|
+|言語|HTML　/　CSS　/　JavaScript (jQuery)　/　Ruby (Ruby on Rails) |
+|インフラ|Amazon EC2 (Amazon Linux)　+　Nginx　+　Unicorn|
+|デプロイ|Capistrano自動デプロイ|
+|データベース|MYSQL|
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+・
