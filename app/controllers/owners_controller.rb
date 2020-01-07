@@ -14,9 +14,12 @@ class OwnersController < ApplicationController
   def create
     @owner = Owner.new(owner_params)
     if @owner.save
-      @owner.send_activation_email
-      flash[:info] = "メールを確認し、アカウントを有効化してください"
-      redirect_to root_url
+      #@owner.send_activation_email
+      #flash[:info] = "メールを確認し、アカウントを有効化してください"
+      #redirect_to root_url
+      owner_log_in @owner
+      flash[:success] = "ログインしました"
+      redirect_to @owner
     else
       render 'new'
     end

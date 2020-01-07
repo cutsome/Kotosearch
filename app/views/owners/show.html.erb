@@ -47,7 +47,7 @@
       <% end %>
     <% end %>
     <% if current_owner?(@owner) %>
-      <%= link_to "編集", edit_owner_path(@owner) %>
+      <%= link_to "編集する", edit_owner_path(@owner), class: 'overview_edit' %>
     <% end %>
     <%#= link_to "詳しく見る", @owner.url %>
   <% end %>

@@ -46,7 +46,7 @@
         <%= tag.div @agent.target_audience, class: 'overview_info_item_contents' %>
       <% end %>
       <% if current_agent?(@agent) %>
-        <%= link_to "編集", edit_agent_path(@agent) %>
+        <%= link_to "編集する", edit_agent_path(@agent), class: 'overview_edit' %>
       <% end %>
     <% end %>
     <%#= link_to "詳しく見る", @agent.url %>

@@ -14,9 +14,12 @@ class AgentsController < ApplicationController
   def create
     @agent = Agent.new(agent_params)
     if @agent.save
-      @agent.send_activation_email
-      flash[:info] = "メールを確認し、アカウントを有効化してください"
-      redirect_to root_url
+      #@agent.send_activation_email
+      #flash[:info] = "メールを確認し、アカウントを有効化してください"
+      #redirect_to root_url
+      agent_log_in @agent
+      flash[:success] = "ログインしました"
+      redirect_to @agent
     else
       render 'new'
     end

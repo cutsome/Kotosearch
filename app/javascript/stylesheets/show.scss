@@ -50,6 +50,21 @@
       }
     }
   }
+  &_edit {
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(230, 230, 230);
+    transition: 0.2s;
+    &:hover {
+      color: rgb(255, 255, 255);
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
 }
 
 @media (max-width: 768px) {
