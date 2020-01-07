@@ -1,0 +1,20 @@
+<div class="form search">
+  <div class="form-container">
+    <%= form_with url: agent_result_path do |f| %>
+      <div class="form-layout">
+        <div class="form-label-ttl">
+          <%= f.label :target_ids, "ターゲット国を選ぶ", class: "form-label" %>
+        </div>
+        <%= f.collection_check_boxes(:target_ids, Target.all, :id, :name) do |c| %>
+          <label class="tag-item">
+            <%= c.check_box %>
+            <span>#</span><%= c.text %>
+          </label>
+        <% end %>
+      </div>
+      <div class="btn-location">
+        <%= f.submit yield(:button_text), class: "search_button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

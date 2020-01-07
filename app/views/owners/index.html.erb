@@ -1,6 +1,8 @@
 <% provide(:title, '体験型事業者を探す') %>
+<% provide(:button_text, '検索する') %>
 
 <div class="business-layout">
+  <%= render 'shared/owner_search' %>
   <div class="business-layout-main">
     <% @owners.each do |owner| %>
       <div class="business-item">

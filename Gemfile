@@ -18,6 +18,7 @@ gem 'mail-iso-2022-jp'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'hirb'
 gem 'hirb-unicode'
+gem 'aws-ses'
 
 # 画像関連
 gem 'mini_magick'

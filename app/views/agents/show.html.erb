@@ -3,7 +3,9 @@
 <%= tag.div class: 'overview' do %>
   <%= tag.div class: 'overview_top' do %>
     <%# イメージ画像・会社名 %>
-    <%= image_tag @agent.photo.variant(resize_to_fill:[540,400], crop:("540x400+0+0")).processed if @agent.photo.attached? %>
+    <%= tag.div class: 'overview_img' do %>
+      <%= image_tag @agent.photo.variant(resize_to_fill:[540,400], crop:("540x400+0+0")).processed if @agent.photo.attached? %>
+    <% end %>
     <%= tag.div class: 'overview_head' do %>
       <%= tag.div @agent.name, class: 'overview_head_name' %>
       <%# ハッシュタグ %>

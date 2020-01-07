@@ -1,6 +1,8 @@
 <% provide(:title, 'エージェントを探す') %>
+<% provide(:button_text, '検索する') %>
 
 <div class="business-layout">
+  <%= render 'shared/agent_search' %>
   <div class="business-layout-main">
     <% @agents.each do |agent| %>
       <div class="business-item">

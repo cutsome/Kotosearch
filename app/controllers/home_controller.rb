@@ -2,6 +2,10 @@ class HomeController < ApplicationController
   def index
   end
 
-  def help
+  def search
+  end
+
+  def result
+
   end
 end

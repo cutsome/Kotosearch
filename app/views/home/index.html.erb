@@ -4,71 +4,38 @@
   <section class="head-section">
     <p class="site-title-sub">Welcome to Kotosearch</p>
     <p class="site-title">
-      <span>体験型事業者 × 旅行会社(エージェント)</span><br>
+      <span>体験型事業者 × 旅行会社</span><br>
         <br>
       インバウンド事業者向け<br>
       代理店・事業者 検索サービス
     </p>
     <div class="buttons">
-      <a class="button-a" href="#about">LEARN MORE</a>
-      <a class="button-a button-showy" href="#contact">SEND MESSAGE</a>
+      <a class="button-a" href="#about">ABOUT KOTOSEARCH</a>
+      <a class="button-a button-showy" href="#contact">JUST DO IT !!</a>
     </div>
   </section>
   <section class="about" id="about">
     <h2 class="heading">Kotosearch とは...?</h2>
     <p class="about-text-1">
       <br><span>自然体験や文化体験を提供するサプライヤー × インバウンド向けエージェント</span><br><br>
-      爆買いの時代が終わり、体験を消費するコト消費へシフトしていく中、<br>
-      体験を提供する側と、販売する側をマッチングさせられないか。<br>
-      そんなアイデアから生まれたのがKotosearchです。
+      昨今のインバウンドトレンドでは、商品を購買する"モノ"消費から<br>
+      体験を消費する"コト"消費へとシフトしつつあります。<br>
+      体験の提供者と、販売者をマッチングさせられないか。<br>
+      そんなアイデアから生まれたのがKotosearch（コトサーチ）です。
     </p>
-    <p class="about-text-2 ">
+    <p class="about-text-2">
       ✔︎ インバウンドコンサルティングを利用する前の事前知識に<br>
       ✔︎ ターゲット国毎にどのような代理店があるか知りたい時に<br>
-      ✔︎ インバウンド向けツアー企画をビルドする際のネタ探しに
+      ✔︎ インバウンド向けツアー企画を立ち上げる際のネタ探しに
     </p>
   </section>
-  <section class="skills">
-    <h2 class="heading">MY SKILLS</h2>
-    <div class="skills-wrapper">
-      <div class="skill-box">
-        <i class="skill-icon fa fa-lightbulb-o"></i>
-        <div class="skill-title">IDEA</div>
-        <p class="skill-text">
-          何かを考えることが好きです。<br>
-          新しいことを思いついては試しています。
-        </p>
-      </div>
-      <div class="skill-box">
-        <i class="skill-icon fa fa-paint-brush"></i>
-        <div class="skill-title">DESIGN</div>
-        <p class="skill-text">
-          見た目の綺麗さだけではなくて、<br>
-          使いやすさ、情報の伝わりやすさなど、<br>
-          その先まで考えることを意識しています。
-        </p>
-      </div>
-      <div class="skill-box">
-        <i class="skill-icon fa fa-code"></i>
-        <div class="skill-title">CODING</div>
-        <p class="skill-text">
-          HTML/CSSコーディングも行います。<br>
-          正しく美しいマークアップと、<br>
-          今後の変更への強さを考慮しています。
-        </p>
-      </div>
-    </div>
-  </section>
+
   <section class="contact" id="contact">
-    <h2 class="heading">
-      CONTACT<br>
-      <span style="font-size: 1.2rem;">(サーバー未構築)</span>
+    <h2 class="heading rsp">
+      さっそくはじめてみましょう！
     </h2>
-    <form class="contact-form">
-      <input type="text" name="name" placeholder="NAME">
-      <textarea name="message" placeholder="MESSAGE"></textarea>
-      <input type="submit" value="SEND">
-    </form>
+    <%= link_to "体験型事業者を探す", owners_path, class: 'index_btn' %>
+    <%= link_to "エージェントを探す", agents_path, class: 'index_btn' %>
   </section>
   <footer class="footer">
     ©︎ masahiro's portfolio

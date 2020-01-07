@@ -1,14 +1,10 @@
-<div class="header">
+<header class="header">
   <div class="header-logo">
     <%= link_to "Kotosearch", root_path, id: "header-logo-item" %>
-  </div>
-  <div class="keyword-search">
-    <%#= 検索フォーム %>
   </div>
   <ul class="global-menu">
     <li><%= link_to "体験型事業者を探す", owners_path, class: "global-menu-item" %></li>
     <li><%= link_to "エージェントを探す", agents_path, class: "global-menu-item" %></li>
-    <li><%= link_to "ご利用ガイド", help_path, class: "global-menu-item" %></li>
   </ul>
   <ul class="header-menu">
     <li><%= link_to "事業者登録", owner_signup_path, class: "header-menu-item" %></li>
@@ -39,4 +35,48 @@
       </li>
     <% end %>
   </ul>
-</div>
+  <nav class="globalnav-wrap">
+    <div class="nav-button-wrap">
+      <div class="nav-button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <ul class="globalnav">
+      <li class="dropdown-btn">
+        <p>SEARCH</p>
+        <ul class="dropdown">
+          <li><%= link_to "▷ 体験型事業者を探す", owners_path %></li>
+          <li><%= link_to "▷ エージェントを探す", agents_path %></li>
+        </ul>
+      </li>
+      <li class="dropdown-btn">
+        <% if agent_logged_in? %>
+          <ul class="dropdown">
+            <li><%= link_to "▷ マイページ", current_agent %></li>
+            <li><%= link_to "▷ ログアウト", agent_logout_path, method: :delete %></li>
+          </ul>
+        <% elsif owner_logged_in? %>
+          <ul class="dropdown">
+            <li><%= link_to "▷ マイページ", current_owner %></li>
+            <li><%= link_to "▷ ログアウト", owner_logout_path, method: :delete %></li>
+          </ul>
+        <% else %>
+          <p>SIGN IN</p>
+          <ul class="dropdown">
+            <li><%= link_to "▷ 体験型事業者の方", owner_login_path %></li>
+            <li><%= link_to "▷ エージェントの方", agent_login_path %></li>
+          </ul>
+        <% end %>
+      </li>
+      <li class="dropdown-btn">
+        <p>SIGN UP</p>
+        <ul class="dropdown">
+          <li><%= link_to "▷ 体験型事業者 登録", owner_signup_path %></li>
+          <li><%= link_to "▷ エージェント 登録", agent_signup_path %></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>

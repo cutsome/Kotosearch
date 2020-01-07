@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
-  root to: 'home#index'
-  get '/help', to: 'home#help'
+  controller :home do
+    root 'home#index'
+    get :search
+    get :agent_result
+    get :owner_result
+  end
+
   get '/agent_signup', to: 'agents#new'
   get '/owner_signup', to: 'owners#new'
   get '/agent_login', to: 'agent_sessions#new'

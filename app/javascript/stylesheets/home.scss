@@ -32,7 +32,7 @@
 
 .site-title {
   margin: 50px 0 40px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-weight: bold;
   font-size: 2.2rem;
   span {
@@ -68,7 +68,7 @@
 
 .about {
   padding: 80px 30px;
-  background-color: #effbfa;
+  background-color: #fff;
   color: #333;
 }
 
@@ -114,97 +114,26 @@
   line-height: 2.5;
 }
 
-
-
-/* my skills */
-
-.skills {
-  padding: 80px 0;
-  background-color: #fff;
-  color: #333;
-}
-
-.skills-wrapper {
-  display: table;
-  width: 80%;
-  margin: 50px auto 0;
-  table-layout: fixed;
-}
-
-.skill-box {
-  display: table-cell;
-}
-
-.skill-icon {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 30px;
-  border: 4px solid;
-  border-radius: 50%;
-  color: #f1b400;
-  font-size: 8rem;
-  line-height: 142px;
-}
-
-.skill-title {
-  margin: 0 20px 20px;
-  font-size: 2rem;
-}
-
-.skill-text {
-  margin: 0 20px;
-  line-height: 2;
-}
-
 /* contact */
 
 .contact {
   padding: 80px 0 150px;
   background-color: rgba(0, 0, 0, 0.4);
-
-}
-
-.contact-form {
-  width: 50%;
-  margin: 50px auto 0;
-}
-
-.contact-form input[type=text],
-.contact-form textarea {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 15px;
-  outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 2px;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #fff;
-}
-
-.contact-form input[type=text]:focus,
-.contact-form textarea:focus {
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8) inset;
-}
-
-.contact-form textarea {
-  height: 150px;
-}
-
-.contact-form input[type=submit] {
-  display: block;
-  width: 200px;
-  margin: 40px auto 0;
-  padding: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 5px;
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.6);
-  cursor: pointer;
-}
-
-.contact-form input[type=submit]:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  .index_btn {
+    display: block;
+    width: 40%;
+    margin: 80px auto 0;
+    padding: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    font-size: 1.8rem;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
 }
 
 /* footer */
@@ -239,57 +168,36 @@
       font-size: 2.2rem;
     }
   }
-  .header {
-    padding-top: 60px;
+  .buttons {
+    margin-top: 10px;
   }
-  .button:hover {
+  .buttons:hover {
     opacity: 1;
   }
   .heading {
     font-size: 2.5rem;
   }
+  .rsp {
+    font-size: 1.8rem;
+  }
   body {
     font-size: 1.3rem;
   }
-  .about-text {
+  .about-text-1 {
     line-height: 1.8;
+    font-size: 0.8rem;
   }
-  .works-wrapper,
-  .work-box {
-    display: block;
-  }
-  .work-image {
-    display: none;
-  }
-  .work-description {
-    position: relative;
-  }
-  .work-box::after {
-    top: 0;
-    height: 100%;
-    background-size: cover;
-    transform: none;
-  }
-  .skills-wrapper,
-  .skill-box {
-    display: block;
-  }
-  .skill-icon {
-    width: 100px;
-    height: 100px;
-    font-size: 5rem;
-    line-height: 92px;
-  }
-  .skill-box {
-    margin: 40px auto;
-  }
-  .skill-text {
-    margin: 0;
-  }
-  .contact-form {
-    width: 80%;
+  .about-text-2 {
+    line-height: 1.8;
+    font-size: 1.0rem;
   }
   .contact {
-    padding-bottom: 80px;
+    padding: 20px 0 80px;
+    .index_btn {
+      width: 60%;
+      margin-top: 30px;
+      font-size: 1.0rem;
+      padding: 20px;
+    }
   }
 }
