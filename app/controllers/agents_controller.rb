@@ -4,7 +4,15 @@ class AgentsController < ApplicationController
   before_action :admin_agent, only: :destroy
 
   def index
-    @agents = Agent.all.page(params[:page]).per(20)
+    @q = Agent.ransack(params[:q])
+    @targets = Target.all
+    @agents = @q.result.includes(:photo_attachment).page(params[:page]).per(20)
+  end
+
+  def agent_result
+    @q = Agent.search(agent_search_params)
+    @targets = Target.all
+    @agents = @q.result.includes(:photo_attachment).page(params[:page]).per(20)
   end
 
   def new
@@ -55,6 +63,10 @@ class AgentsController < ApplicationController
         :category, :address, :scale, :photo,
         :target_audience, { target_ids: [] }
       )
+    end
+
+    def agent_search_params
+      params.require(:q).permit(targets_id_in: [])
     end
 
     def logged_in_agent

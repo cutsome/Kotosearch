@@ -1,5 +1,5 @@
 <div class="form-container">
-  <%= form_with model: @agent do |f| %>
+  <%= form_with model: @agent, local: true do |f| %>
     <%= render "shared/error_messages", model: @agent %>
     <div class="form-layout">
       <%= f.label :name, "会社名", class: "form-label" %>

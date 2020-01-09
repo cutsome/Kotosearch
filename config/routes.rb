@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
 
-  controller :home do
-    root 'home#index'
-    get :search
-    get :agent_result
-    get :owner_result
-  end
-
+  root to: 'home#index'
+  get 'agent_search', to: 'agents#agent_result'
+  get 'owner_search', to: 'owners#owner_result'
   get '/agent_signup', to: 'agents#new'
   get '/owner_signup', to: 'owners#new'
   get '/agent_login', to: 'agent_sessions#new'

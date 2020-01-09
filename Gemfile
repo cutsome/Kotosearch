@@ -19,14 +19,16 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'hirb'
 gem 'hirb-unicode'
 gem 'aws-ses'
+gem 'ransack'
 
 # 画像関連
 gem 'mini_magick'
 gem 'aws-sdk-s3', require: false
-gem 'image_processing', '~>1.2'
+gem 'image_processing', '~> 1.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'bullet'
   # capistrano
   gem 'capistrano'
   gem 'capistrano-bundler'

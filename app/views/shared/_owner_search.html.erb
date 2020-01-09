@@ -1,11 +1,11 @@
 <div class="form search">
   <div class="form-container">
-    <%= form_with url: owner_result_path do |f| %>
+    <%= search_form_for(@q, url: owner_search_path) do |f| %>
       <div class="form-layout">
         <div class="form-label-ttl">
-          <%= f.label :leisure_ids, "体験内容を選ぶ", class: "form-label" %>
+          <%= f.label :leisures_id_in, "体験内容を選ぶ", class: "form-label" %>
         </div>
-        <%= f.collection_check_boxes(:leisure_ids, Leisure.all, :id, :name) do |c| %>
+        <%= f.collection_check_boxes(:leisures_id_in, @leisures, :id, :name) do |c| %>
           <label class="tag-item">
             <%= c.check_box %>
             <span>#</span><%= c.text %>

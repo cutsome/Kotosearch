@@ -4,7 +4,15 @@ class OwnersController < ApplicationController
   before_action :admin_owner, only: :destroy
 
   def index
-    @owners = Owner.all.page(params[:page]).per(20)
+    @q = Owner.ransack(params[:q])
+    @leisures = Leisure.all
+    @owners = @q.result.includes(:photo_attachment).page(params[:page]).per(20)
+  end
+
+  def owner_result
+    @q = Owner.search(owner_search_params)
+    @leisures = Leisure.all
+    @owners = @q.result.includes(:photo_attachment).page(params[:page]).per(20)
   end
 
   def new
@@ -57,6 +65,10 @@ class OwnersController < ApplicationController
         :password, :password_confirmation, :photo,
         { leisure_ids: [] }
       )
+    end
+
+    def owner_search_params
+      params.require(:q).permit(leisures_id_in: [])
     end
 
     def logged_in_owner
