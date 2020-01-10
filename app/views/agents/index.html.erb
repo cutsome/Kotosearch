@@ -5,20 +5,7 @@
   <%= render 'shared/agent_search' %>
   <div class="business-layout-main">
     <% @agents.each do |agent| %>
-      <div class="business-item">
-        <div class="business-image">
-          <% if agent.photo.attached? %>
-            <%= image_tag agent.photo.variant(resize_to_fill:[220,160], crop:("220x160+0+0")).processed, class: "business-image" %>
-          <% end %>
-        </div>
-        <div class="business-info">
-          <%= link_to agent.name, agent, class: "business-item-name" %>
-          <% if agent_logged_in? && current_agent.admin? && !current_agent?(agent) %>
-            <%= link_to "削除", agent, method: :delete, data: { confirm: "本当に削除しますか？" } %>
-          <% end %>
-          <%= link_to agent.email, agent, class: "business-item-email" %>
-        </div>
-      </div>
+      <%= render 'shared/agent_icon', agent: agent %>
     <% end %>
   </div>
   <%= paginate @agents %>

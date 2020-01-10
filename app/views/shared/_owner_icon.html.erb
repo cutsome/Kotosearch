@@ -1,0 +1,21 @@
+<div class="business-item">
+  <div class="business-image">
+    <% if owner.photo.attached? %>
+      <%= image_tag owner.photo.variant(resize_to_fill:[220,160], crop:("220x160+0+0")).processed, class: "business-image" %>
+    <% end %>
+  </div>
+  <div class="business-info">
+    <%= link_to "", owner, class: "business-item-name" %>
+    <strong><%= owner.name %></strong>
+    <% if owner_logged_in? && current_owner.admin? && !current_owner?(owner) %>
+      <%= link_to "削除", owner, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <% end %>
+    <%= tag.div class: 'tag' do %>
+      <% owner.leisures.each do |leisure| %>
+        <%= link_to leisure_path(leisure), class: "tag-item tag-item__small" do %>
+          <span>#</span><%= leisure.name %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

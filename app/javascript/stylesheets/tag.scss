@@ -6,7 +6,7 @@
     margin: 0 6px 6px 0;
     font-size: 13px;
     border-radius: 4px;
-    background: #eae6dc;
+    background: #e4e4e4;
     transition: 0.3s all;
     cursor: pointer;
     input {
@@ -15,18 +15,22 @@
     }
     span {
       margin-right: 4px;
-      color: #8c2a2a;
+      color: #20b8b8;
+      font-weight: bold;
     }
     &__active, &:hover {
       color: #fff;
-      background: #8c2a2a;
+      background: #20b8b8;
       span {
         color: #fff;
       }
     }
     &__small {
       color: #000;
+      padding: 4px 4px;
+      margin-top: 10px;
       margin-bottom: 0;
+      font-size: 0.7rem;
     }
   }
 }

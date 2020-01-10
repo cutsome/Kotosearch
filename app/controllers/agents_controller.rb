@@ -6,13 +6,13 @@ class AgentsController < ApplicationController
   def index
     @q = Agent.ransack(params[:q])
     @targets = Target.all
-    @agents = @q.result.includes(:photo_attachment).page(params[:page]).per(20)
+    @agents = @q.result.includes(:photo_attachment, :agent_targets, :targets).page(params[:page]).per(20)
   end
 
   def agent_result
     @q = Agent.search(agent_search_params)
     @targets = Target.all
-    @agents = @q.result.includes(:photo_attachment).page(params[:page]).per(20)
+    @agents = @q.result.includes(:photo_attachment, :agent_targets, :targets).page(params[:page]).per(20)
   end
 
   def new

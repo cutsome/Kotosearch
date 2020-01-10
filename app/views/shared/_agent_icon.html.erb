@@ -1,0 +1,21 @@
+<div class="business-item">
+  <div class="business-image">
+    <% if agent.photo.attached? %>
+      <%= image_tag agent.photo.variant(resize_to_fill:[220,160], crop:("220x160+0+0")).processed, class: "business-image" %>
+    <% end %>
+  </div>
+  <div class="business-info">
+    <%= link_to "", agent, class: "business-item-name" %>
+    <strong><%= agent.name %></strong>
+    <% if agent_logged_in? && current_agent.admin? && !current_agent?(agent) %>
+      <%= link_to "削除", agent, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <% end %>
+    <%= tag.div class: 'tag' do %>
+      <% agent.targets.each do |target| %>
+        <%= link_to target_path(target), class: "tag-item tag-item__small" do %>
+          <span>#</span><%= target.name %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
