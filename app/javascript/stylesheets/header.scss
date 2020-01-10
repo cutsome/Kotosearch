@@ -202,10 +202,10 @@
         display:none;
       }
       .dropdown-btn {
-        margin: 20px 0 40px 100px;
+        margin: 20px 0 40px 40px;
         p {
           color: rgba(255, 255, 255, 0.8);
-          font-size: 1.6rem;
+          font-size: 1.3rem;
         }
       }
       .dropdown {
@@ -220,9 +220,13 @@
         li {
           display:inline-block;
           margin:10px 0;
+          font-size: 1.1rem;
           a {
             color:#fff;
           }
+        }
+        .searching {
+          font-size: 1.4rem;
         }
       }
     }

@@ -1,5 +1,5 @@
 $(function(){
-  $(document).on('click', 'input', function(){
+  $('.container').on('click', 'input', function(){
     var tag = $(this).parent('.tag-item');
 
     if (tag.hasClass('tag-item')) {

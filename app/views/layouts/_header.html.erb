@@ -45,12 +45,12 @@
     </div>
     <ul class="globalnav">
       <li class="dropdown-btn">
-        <p>SEARCH</p>
         <ul class="dropdown">
-          <li><%= link_to "▷ 体験型事業者を探す", owners_path %></li>
-          <li><%= link_to "▷ エージェントを探す", agents_path %></li>
+          <li class="searching"><%= link_to "☞  体験型事業者を探す", owners_path %></li>
+          <li class="searching"><%= link_to "☞  エージェントを探す", agents_path %></li>
         </ul>
       </li>
+      <br>
       <li class="dropdown-btn">
         <% if agent_logged_in? %>
           <ul class="dropdown">
@@ -63,19 +63,18 @@
             <li><%= link_to "▷ ログアウト", owner_logout_path, method: :delete %></li>
           </ul>
         <% else %>
-          <p>SIGN IN</p>
+          <p>体験型事業者の方</p>
           <ul class="dropdown">
-            <li><%= link_to "▷ 体験型事業者の方", owner_login_path %></li>
-            <li><%= link_to "▷ エージェントの方", agent_login_path %></li>
+            <li><%= link_to "▷ ログイン", owner_login_path %></li><br>
+            <li><%= link_to "▷ 新規登録", owner_signup_path %></li>
+          </ul>
+          <br>
+          <p>エージェントの方</p>
+          <ul class="dropdown">
+            <li><%= link_to "▷ ログイン", agent_login_path %></li><br>
+            <li><%= link_to "▷ 新規登録", agent_signup_path %></li>
           </ul>
         <% end %>
-      </li>
-      <li class="dropdown-btn">
-        <p>SIGN UP</p>
-        <ul class="dropdown">
-          <li><%= link_to "▷ 体験型事業者 登録", owner_signup_path %></li>
-          <li><%= link_to "▷ エージェント 登録", agent_signup_path %></li>
-        </ul>
       </li>
     </ul>
   </nav>

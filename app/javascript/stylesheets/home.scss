@@ -1,7 +1,7 @@
 /* header */
 
 .top {
-  background: #151515 url("../../javascript/images/nature.jpg") no-repeat fixed left bottom;
+  background: #151515 url("../../javascript/images/murinan.jpg") no-repeat fixed left bottom;
   background-size: cover;
   color: #fff;
   text-align: center;
@@ -10,7 +10,7 @@
 
 .head-section {
   padding: 80px 30px 80px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .site-title-sub {
@@ -118,20 +118,20 @@
 
 .contact {
   padding: 80px 0 150px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
   .index_btn {
     display: block;
     width: 40%;
     margin: 80px auto 0;
     padding: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     font-size: 1.8rem;
     background-color: transparent;
     color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
     &:hover {
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: rgba(255, 255, 255, 0.1);
     }
   }
 }
@@ -146,9 +146,9 @@
 /* responsive design */
 
 @media (max-width: 768px) {
-  .top {
+  /*.top {
     background-image: none;
-  }
+  }*/
   .site-title-sub::before,
   .site-title-sub::after {
     display: block;
