@@ -3,6 +3,7 @@
 
 <div class="business-layout">
   <%= render 'shared/agent_search' %>
+  <%= paginate @agents %>
   <div class="business-layout-main">
     <% @agents.each do |agent| %>
       <%= render 'shared/agent_icon', agent: agent %>

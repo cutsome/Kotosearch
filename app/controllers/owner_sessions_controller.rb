@@ -10,13 +10,13 @@ class OwnerSessionsController < ApplicationController
         params[:session][:remember_me] == '1' ? owner_remember(owner) : forget(owner)
         redirect_to owner
       else
-        message = "アカウントが有効化されていません"
-        message += "メールのアカウント有効化リンクをお確かめください"
+        message = "アカウントが有効化されていません。 "
+        message += "メールのアカウント有効化リンクをお確かめください。"
         flash[:warning] = message
         redirect_to root_url
       end
     else
-      flash.now[:danger] = "メールアドレスまたはパスワードが間違っています"
+      flash.now[:danger] = "メールアドレスまたはパスワードが間違っています。"
       render 'owner_sessions/new'
     end
   end

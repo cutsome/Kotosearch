@@ -3,6 +3,7 @@
 
 <div class="business-layout">
   <%= render 'shared/owner_search' %>
+  <%= paginate @owners %>
   <div class="business-layout-main">
     <% @owners.each do |owner| %>
       <%= render 'shared/owner_icon', owner: owner %>
