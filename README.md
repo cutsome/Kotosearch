@@ -33,3 +33,7 @@ Rails　6.0.2.1<br>
 + 都道府県での検索機能
 + チャット機能
 + Twitter, Facebookログイン
+
+## サイトURL
+
+http://kotosearch.com/
