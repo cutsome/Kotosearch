@@ -147,6 +147,33 @@
   }
 }
 
+.id_pass {
+  width: 310px;
+  height: 120px;
+  line-height: 20px;
+  text-align: left;
+  padding: 10px 10px;
+  z-index: 10;
+  position: fixed;
+  right: 20px;
+  bottom: 70px;
+  color: #343434;
+  font-size: 1.0rem;
+  border-radius: 10px;
+  background: #cfcfcf;
+  -webkit-box-shadow: 0 0 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 0 16px 0 rgba(0,0,0,0.2);
+  &_st {
+    margin-top: 10px;
+    font-weight: 800;
+    font-size: 0.9rem;
+  }
+  &_ex {
+    margin-top: 8px;
+    font-size: 0.65rem;
+  }
+}
+
 /* footer */
 
 .footer {
