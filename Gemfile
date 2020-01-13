@@ -12,15 +12,21 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 gem 'rails-i18n'
 gem 'faker'
-gem 'kaminari'
 gem 'mail-iso-2022-jp'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'hirb'
 gem 'hirb-unicode'
+
+# アカウント有効化メール送信
 gem 'aws-ses'
+
+# ページネーション
+gem 'kaminari'
+
+# 検索機能
 gem 'ransack'
 
-# 画像関連
+# 画像投稿機能
 gem 'mini_magick'
 gem 'aws-sdk-s3', require: false
 gem 'image_processing', '~> 1.2'
@@ -28,7 +34,7 @@ gem 'image_processing', '~> 1.2'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'bullet'
-  # capistrano
+  # capistrano自動デプロイ
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
