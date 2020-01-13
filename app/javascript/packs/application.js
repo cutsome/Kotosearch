@@ -14,3 +14,4 @@ import "../stylesheets/header.scss"
 import "../stylesheets/form.scss"
 import "../javascripts/tag.js"
 import "../javascripts/nav.js"
+const images = require.context('../images/', true)
