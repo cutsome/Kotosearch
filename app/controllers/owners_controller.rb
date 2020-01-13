@@ -6,13 +6,13 @@ class OwnersController < ApplicationController
   def index
     @q = Owner.ransack(params[:q])
     @leisures = Leisure.all
-    @owners = @q.result.includes(:photo_attachment, :owner_leisures, :leisures).page(params[:page]).per(20)
+    @owners = @q.result.with_attached_photo.includes(:photo_attachment, :owner_leisures, :leisures).page(params[:page]).per(20)
   end
 
   def owner_result
     @q = Owner.search(owner_search_params)
     @leisures = Leisure.all
-    @owners = @q.result.includes(:photo_attachment, :owner_leisures, :leisures).page(params[:page]).per(20)
+    @owners = @q.result.with_attached_photo.includes(:photo_attachment, :owner_leisures, :leisures).page(params[:page]).per(20)
   end
 
   def new
