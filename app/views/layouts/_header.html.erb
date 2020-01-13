@@ -54,12 +54,12 @@
       <li class="dropdown-btn">
         <% if agent_logged_in? %>
           <ul class="dropdown">
-            <li><%= link_to "▷ マイページ", current_agent %></li>
+            <li><%= link_to "▷ マイページ", current_agent %></li><br>
             <li><%= link_to "▷ ログアウト", agent_logout_path, method: :delete %></li>
           </ul>
         <% elsif owner_logged_in? %>
           <ul class="dropdown">
-            <li><%= link_to "▷ マイページ", current_owner %></li>
+            <li><%= link_to "▷ マイページ", current_owner %></li><br>
             <li><%= link_to "▷ ログアウト", owner_logout_path, method: :delete %></li>
           </ul>
         <% else %>

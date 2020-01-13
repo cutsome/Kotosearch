@@ -1,5 +1,3 @@
-var $ = require('jquery');
-
 $(function(){
   $(document).on('click', 'input', function(){
     var tag = $(this).parent('.tag-item');

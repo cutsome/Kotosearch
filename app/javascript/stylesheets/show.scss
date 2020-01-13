@@ -2,14 +2,12 @@
   width: 600px;
   margin: 0 auto;
   padding: 60px 0 220px;
-  &_top {
-    padding: 30px;
-  }
   &_img {
     width: 100%;
     height: 400px;
     margin-bottom: 20px;
     object-fit: cover;
+    border-radius: 5px;
     border: solid 1px #ddd;
   }
   &_head {
@@ -70,6 +68,9 @@
 @media (max-width: 768px) {
   .overview {
     width: calc(100% - 32px);
+    &_img {
+      height: 280px;
+    }
     &_info {
       font-size: 1.0rem;
     }

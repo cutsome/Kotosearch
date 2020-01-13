@@ -1,57 +1,50 @@
 <% provide(:title, "体験型事業者詳細") %>
 
 <%= tag.div class: 'overview' do %>
-  <%= tag.div class: 'overview_top' do %>
-    <%# イメージ画像・会社名 %>
-    <%= tag.div class: 'overview_img' do %>
-      <%= image_tag @owner.photo.variant(resize_to_fill:[540,400], crop:("540x400+0+0")).processed, class: "overview-img" if @owner.photo.attached? %>
-    <% end %>
-    <%= tag.div class: 'overview_head' do %>
-      <%= tag.div @owner.name, class: 'overview_head_name' %>
-      <%# ハッシュタグ %>
-      <%= tag.div class: 'tag' do %>
-        <% @owner.leisures.each do |leisure| %>
-          <%= link_to leisure_path(leisure), class: "tag-item tag-item__small" do %>
-            <span>#</span><%= leisure.name %>
-          <% end %>
+  <%# イメージ画像・会社名 %>
+  <%= tag.div class: 'overview_img' do %>
+    <%= image_tag @owner.photo.variant(resize_to_fill:[540,400], crop:("540x400+0+0")).processed, class: "overview_img" if @owner.photo.attached? %>
+  <% end %>
+  <%= tag.div class: 'overview_head' do %>
+    <%= tag.div @owner.name, class: 'overview_head_name' %>
+    <%# ハッシュタグ %>
+    <%= tag.div class: 'tag' do %>
+      <% @owner.leisures.each do |leisure| %>
+        <%= link_to leisure_path(leisure), class: "tag-item tag-item__small" do %>
+          <span>#</span><%= leisure.name %>
         <% end %>
       <% end %>
     <% end %>
-    <%# 会社概要 %>
-      <%= tag.div class: 'overview_info' do %>
-      <%= tag.div "会社概要", class: 'overview_abstract' %>
-      <%= tag.div class: 'line' %>
-      <%= tag.div class: 'overview_info_item' do %>
-        <%= tag.div "社名", class: 'overview_info_item_ttl' %>
-        <%= tag.div @owner.name, class: 'overview_info_item_contents' %>
-      <% end %>
-      <%= tag.div class: 'line' %>
-      <%= tag.div class: 'overview_info_item' do %>
-        <%= tag.div "住所", class: 'overview_info_item_ttl' %>
-        <%= tag.div @owner.address, class: 'overview_info_item_contents' %>
-      <% end %>
-      <%= tag.div class: 'line' %>
-      <%= tag.div class: 'overview_info_item' do %>
-        <%= tag.div "会社規模", class: 'overview_info_item_ttl' %>
-        <%= tag.div @owner.scale, class: 'overview_info_item_contents' %>
-      <% end %>
-      <%= tag.div class: 'line' %>
-      <%= tag.div class: 'overview_info_item' do %>
-        <%= tag.div "営業期間", class: 'overview_info_item_ttl' %>
-        <%= tag.div @owner.period, class: 'overview_info_item_contents' %>
-      <% end %>
-      <%= tag.div class: 'line' %>
-      <%= tag.div class: 'overview_info_item' do %>
-        <%= tag.div "ターゲット層", class: 'overview_info_item_ttl' %>
-        <%= tag.div @owner.target_audience, class: 'overview_info_item_contents' %>
-      <% end %>
-    <% end %>
-    <% if current_owner?(@owner) %>
-      <%= link_to "編集する", edit_owner_path(@owner), class: 'overview_edit' %>
-    <% end %>
-    <%#= link_to "詳しく見る", @owner.url %>
   <% end %>
-  <%= tag.div class: 'owner_search' do %>
-
+  <%= tag.div class: 'overview_info' do %>
+    <%= tag.div "会社概要", class: 'overview_abstract' %>
+    <%= tag.div class: 'line' %>
+    <%= tag.div class: 'overview_info_item' do %>
+      <%= tag.div "社名", class: 'overview_info_item_ttl' %>
+      <%= tag.div @owner.name, class: 'overview_info_item_contents' %>
+    <% end %>
+    <%= tag.div class: 'line' %>
+    <%= tag.div class: 'overview_info_item' do %>
+      <%= tag.div "住所", class: 'overview_info_item_ttl' %>
+      <%= tag.div @owner.address, class: 'overview_info_item_contents' %>
+    <% end %>
+    <%= tag.div class: 'line' %>
+    <%= tag.div class: 'overview_info_item' do %>
+      <%= tag.div "会社規模", class: 'overview_info_item_ttl' %>
+      <%= tag.div @owner.scale, class: 'overview_info_item_contents' %>
+    <% end %>
+    <%= tag.div class: 'line' %>
+    <%= tag.div class: 'overview_info_item' do %>
+      <%= tag.div "営業期間", class: 'overview_info_item_ttl' %>
+      <%= tag.div @owner.period, class: 'overview_info_item_contents' %>
+    <% end %>
+    <%= tag.div class: 'line' %>
+    <%= tag.div class: 'overview_info_item' do %>
+      <%= tag.div "ターゲット層", class: 'overview_info_item_ttl' %>
+      <%= tag.div @owner.target_audience, class: 'overview_info_item_contents' %>
+    <% end %>
+  <% end %>
+  <% if current_owner?(@owner) %>
+    <%= link_to "編集する", edit_owner_path(@owner), class: 'overview_edit' %>
   <% end %>
 <% end %>

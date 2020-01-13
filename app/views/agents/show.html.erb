@@ -1,57 +1,50 @@
 <% provide(:title, "エージェント詳細") %>
 
 <%= tag.div class: 'overview' do %>
-  <%= tag.div class: 'overview_top' do %>
-    <%# イメージ画像・会社名 %>
-    <%= tag.div class: 'overview_img' do %>
-      <%= image_tag @agent.photo.variant(resize_to_fill:[540,400], crop:("540x400+0+0")).processed if @agent.photo.attached? %>
-    <% end %>
-    <%= tag.div class: 'overview_head' do %>
-      <%= tag.div @agent.name, class: 'overview_head_name' %>
-      <%# ハッシュタグ %>
-      <%= tag.div class: 'tag' do %>
-        <% @agent.targets.each do |target| %>
-          <%= link_to target_path(target), class: "tag-item tag-item__small" do %>
-            <span>#</span><%= target.name %>
-          <% end %>
+  <%# イメージ画像・会社名 %>
+  <%= tag.div class: 'overview_img' do %>
+    <%= image_tag @agent.photo.variant(resize_to_fill:[540,400], crop:("540x400+0+0")).processed, class: 'overview_img' if @agent.photo.attached? %>
+  <% end %>
+  <%= tag.div class: 'overview_head' do %>
+    <%= tag.div @agent.name, class: 'overview_head_name' %>
+    <%# ハッシュタグ %>
+    <%= tag.div class: 'tag' do %>
+      <% @agent.targets.each do |target| %>
+        <%= link_to target_path(target), class: "tag-item tag-item__small" do %>
+          <span>#</span><%= target.name %>
         <% end %>
       <% end %>
     <% end %>
-    <%# 会社概要 %>
-      <%= tag.div class: 'overview_info' do %>
-      <%= tag.div "会社概要", class: 'overview_abstract' %>
-      <%= tag.div class: 'line' %>
-      <%= tag.div class: 'overview_info_item' do %>
-        <%= tag.div "社名", class: 'overview_info_item_ttl' %>
-        <%= tag.div @agent.name, class: 'overview_info_item_contents' %>
-      <% end %>
-      <%= tag.div class: 'line' %>
-      <%= tag.div class: 'overview_info_item' do %>
-        <%= tag.div "業種", class: 'overview_info_item_ttl' %>
-        <%= tag.div @agent.category, class: 'overview_info_item_contents' %>
-      <% end %>
-      <%= tag.div class: 'line' %>
-      <%= tag.div class: 'overview_info_item' do %>
-        <%= tag.div "住所", class: 'overview_info_item_ttl' %>
-        <%= tag.div @agent.address, class: 'overview_info_item_contents' %>
-      <% end %>
-      <%= tag.div class: 'line' %>
-      <%= tag.div class: 'overview_info_item' do %>
-        <%= tag.div "会社規模", class: 'overview_info_item_ttl' %>
-        <%= tag.div @agent.scale, class: 'overview_info_item_contents' %>
-      <% end %>
-      <%= tag.div class: 'line' %>
-      <%= tag.div class: 'overview_info_item' do %>
-        <%= tag.div "ターゲット層", class: 'overview_info_item_ttl' %>
-        <%= tag.div @agent.target_audience, class: 'overview_info_item_contents' %>
-      <% end %>
-      <% if current_agent?(@agent) %>
-        <%= link_to "編集する", edit_agent_path(@agent), class: 'overview_edit' %>
-      <% end %>
-    <% end %>
-    <%#= link_to "詳しく見る", @agent.url %>
   <% end %>
-  <%= tag.div class: 'agent_search' do %>
-
+  <%= tag.div class: 'overview_info' do %>
+    <%= tag.div "会社概要", class: 'overview_abstract' %>
+    <%= tag.div class: 'line' %>
+    <%= tag.div class: 'overview_info_item' do %>
+      <%= tag.div "社名", class: 'overview_info_item_ttl' %>
+      <%= tag.div @agent.name, class: 'overview_info_item_contents' %>
+    <% end %>
+    <%= tag.div class: 'line' %>
+    <%= tag.div class: 'overview_info_item' do %>
+      <%= tag.div "業種", class: 'overview_info_item_ttl' %>
+      <%= tag.div @agent.category, class: 'overview_info_item_contents' %>
+    <% end %>
+    <%= tag.div class: 'line' %>
+    <%= tag.div class: 'overview_info_item' do %>
+      <%= tag.div "住所", class: 'overview_info_item_ttl' %>
+      <%= tag.div @agent.address, class: 'overview_info_item_contents' %>
+    <% end %>
+    <%= tag.div class: 'line' %>
+    <%= tag.div class: 'overview_info_item' do %>
+      <%= tag.div "会社規模", class: 'overview_info_item_ttl' %>
+      <%= tag.div @agent.scale, class: 'overview_info_item_contents' %>
+    <% end %>
+    <%= tag.div class: 'line' %>
+    <%= tag.div class: 'overview_info_item' do %>
+      <%= tag.div "ターゲット層", class: 'overview_info_item_ttl' %>
+      <%= tag.div @agent.target_audience, class: 'overview_info_item_contents' %>
+    <% end %>
+  <% end %>
+  <% if current_agent?(@agent) %>
+    <%= link_to "編集する", edit_agent_path(@agent), class: 'overview_edit' %>
   <% end %>
 <% end %>
