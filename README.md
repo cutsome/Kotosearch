@@ -7,7 +7,6 @@
 ## バージョン
 Ruby　2.6.2<br>
 Rails　6.0.2.1<br>
-<br>
 
 ## Wantedly
 
