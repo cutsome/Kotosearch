@@ -9,6 +9,10 @@ Ruby　2.6.2<br>
 Rails　6.0.2.1<br>
 <br>
 
+## Wantedly
+
+https://www.wantedly.com/users/60915719?ql=gaJpZM4Aivg-
+
 ## 技術・機能
 |項目|使用技術|
 |:----:|----|
