@@ -7,6 +7,7 @@
   <% end %>
   <%= tag.div class: 'overview_head' do %>
     <%= tag.div @agent.name, class: 'overview_head_name' %>
+    <%= link_to "編集する", edit_agent_path(@agent), class: 'overview_head_edit' if current_agent?(@agent) %>
     <%# ハッシュタグ %>
     <%= tag.div class: 'tag' do %>
       <% @agent.targets.each do |target| %>
@@ -43,8 +44,5 @@
       <%= tag.div "ターゲット層", class: 'overview_info_item_ttl' %>
       <%= tag.div @agent.target_audience, class: 'overview_info_item_contents' %>
     <% end %>
-  <% end %>
-  <% if current_agent?(@agent) %>
-    <%= link_to "編集する", edit_agent_path(@agent), class: 'overview_edit' %>
   <% end %>
 <% end %>

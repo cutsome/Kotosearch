@@ -12,12 +12,31 @@
   }
   &_head {
     padding-top: 24px;
+    position: relative;
     &_name {
+      display: inline-block;
       margin-bottom: 15px;
       font-size: 22px;
       font-weight: bold;
       word-wrap: break-word;
       letter-spacing: 1px;
+    }
+    &_edit {
+      position: absolute;
+      display: inline-block;
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 3px;
+      top: 30px;
+      left: 210px;
+      border-radius: 5px;
+      font-size: 0.6rem;
+      color: rgba(0, 0, 0, 0.8);
+      background-color: rgb(230, 230, 230);
+      transition: 0.2s;
+      &:hover {
+        color: rgb(255, 255, 255);
+        background-color: rgba(0, 0, 0, 0.8);
+      }
     }
   }
   &_abstract {
@@ -46,21 +65,6 @@
         width: calc(100% - 150px);
         word-wrap: break-word;
       }
-    }
-  }
-  &_edit {
-    display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    margin-top: 40px;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    color: rgba(0, 0, 0, 0.8);
-    background-color: rgb(230, 230, 230);
-    transition: 0.2s;
-    &:hover {
-      color: rgb(255, 255, 255);
-      background-color: rgba(0, 0, 0, 0.8);
     }
   }
 }
