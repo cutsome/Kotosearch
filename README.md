@@ -10,7 +10,7 @@ Rails　6.0.2.1<br>
 
 ## Wantedly
 
-https://www.wantedly.com/users/60915719?ql=gaJpZM4Aivg-
+https://www.wantedly.com/users/60915719
 
 ## 技術・機能
 |項目|使用技術|
@@ -22,18 +22,17 @@ https://www.wantedly.com/users/60915719?ql=gaJpZM4Aivg-
 <br>
 
 + ユーザー登録・削除・編集・管理権限 機能
-+ ２種類のユーザーを別モデルで実装 （ Ownerモデル, Agentモデル ）
 + 永続セッション・アカウント有効化・パスワードリセット 機能
 + ハッシュタグ機能 （ Collection check boxes & jQuery ）
 + 検索機能
 + 画像投稿機能 （ ActiveStorage & Amzon S3 & ImageProcessing ）
-+ フロントはWebpacker使用 （ アセットパイプライン不使用 ）
++ Webpacker使用 （ アセットパイプライン不使用 ）
 + テスト記述
 + レスポンシブ対応
 
 ## 追加したい機能
 
-+ 都道府県での検索機能
++ JSフレームワークを使用したUI/UX向上
 + チャット機能
 + Twitter, Facebookログイン
 
