@@ -29,7 +29,7 @@ gem 'ransack'
 # 画像投稿機能
 gem 'mini_magick'
 gem 'aws-sdk-s3', require: false
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
